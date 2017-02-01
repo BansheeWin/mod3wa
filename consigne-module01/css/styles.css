@@ -1,0 +1,61 @@
+footer {
+    text-align: center;
+    font-size: 13px;
+}
+
+body {
+    width: 1000px;
+    margin: auto;
+}
+
+#rf {
+    color: red;
+}
+
+#bf {
+    color: blue;
+}
+
+#gf {
+    color: green;
+}
+
+.arial {
+    font-family: arial;
+}
+
+.mono {
+    font-family: monospace;
+}
+
+#rbg {
+    background-color: red;
+}
+
+#bbg {
+    background-color: blue;
+}
+
+#gbg {
+    background-color: green;
+}
+
+#img3wa {
+    height: 50px;
+    width: 50px;
+}
+
+#mono {
+    font-family: monospace;
+    color: gray;
+}
+
+#arial {
+    font-family: Arial;
+    color: gray;
+}
+
+img {
+    height: 200px;
+    width: 200px;
+}

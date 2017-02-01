@@ -1,0 +1,46 @@
+span {
+    color: #444;
+}
+
+#color p {
+    font-family: Arial, sans-serif;
+}
+
+#color .red {
+    color: red;
+}
+
+#color .blue {
+    color: blue;
+}
+
+#color .green {
+    color: green;
+}
+
+#background p {
+    font-family: monospace;
+}
+
+#background .red {
+    background-color: red;
+}
+
+#background .blue {
+    background-color: blue;
+}
+
+#background .green {
+    background-color: green;
+}
+
+/* LICENCE */
+#licence {
+    display: block;
+    text-align: center;
+    padding: 25px;
+}
+
+#licence img {
+    width: 50px;
+}
