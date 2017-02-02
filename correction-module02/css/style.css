@@ -1,0 +1,103 @@
+/* Déclaration de police */
+@font-face {
+    font-family: "Blacksword";
+    src: url(../fonts/Blacksword.otf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Pour déclarer la même police avec des styles différents (normal / gras / italique),
+on se sert du même nom de police, on règle juste sa propriété font-weight et sa propriété font-style */
+@font-face {
+    font-family: "Cardo";
+    src: url(../fonts/cardo/cardo-regular.woff) format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Cardo";
+    src: url(../fonts/cardo/cardo-italic.woff) format("woff");
+    font-weight: normal;
+    font-style: italic;
+}
+@font-face {
+    font-family: "Cardo";
+    src: url(../fonts/cardo/cardo-bold.woff) format("woff");
+    font-weight: bold;
+    font-style: normal;
+}
+
+/* GLOBAL */
+body {
+    background-image: url("../img/bunting.png");
+    background-repeat: repeat-x;
+    background-color: #FBFAF4;
+    max-width: 800px;
+    width: 50%;
+    margin: 0 auto;
+    color: #555;
+    font-size: 1.4em;
+    font-family: "Cardo", serif;
+}
+
+h1, h2, h3 {
+    font-family: "Blacksword", sans-serif;
+    font-weight: normal;
+}
+
+h1 {
+    font-size: 4em;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2.5em;
+    margin: 50px 0 -25px;
+    word-spacing: 25px;
+}
+
+h3 {
+    font-size: 1.5em;
+    margin: 50px 0 -25px;
+    word-spacing: 10px;
+}
+
+a {
+    color: #F2A1B1;
+    text-decoration: none;
+}
+
+p {
+    margin: 1em 0;
+    text-align: justify;
+    line-height: 50px;
+    text-indent: 25px;
+}
+
+/* CITATIONS */
+q {
+    display: block;
+    font-size: 1.6em;
+    font-style: italic;
+    color: #666;
+    line-height: 60px;
+    text-align: center;
+    margin-top: 3em;
+}
+
+cite {
+    display: block;
+    text-align: right;
+    margin-bottom: 3em;
+}
+
+/* LICENCE */
+#licence {
+    display: block;
+    text-align: center;
+    padding: 25px;
+}
+
+#licence img {
+    width: 50px;
+}

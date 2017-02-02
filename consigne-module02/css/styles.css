@@ -57,6 +57,7 @@ body {
     background-image: url("../img/bunting.png");
     background-repeat: repeat-x;
     padding: 1em;
+    color: #555;
 }
 
 p {
