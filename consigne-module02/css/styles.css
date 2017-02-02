@@ -28,6 +28,7 @@
 
 h1, h2, h3 {
     font-family: Blacksword;
+    font-weight:500;
 }
 h2,h3{
   text-align: left;
@@ -40,6 +41,8 @@ h1 {
 
 h2 {
     font-size: 2.5em;
+    margin:0;
+    padding:0;
 }
 
 h3 {
@@ -47,10 +50,11 @@ h3 {
 }
 
 body {
-    width: 50%;
-    margin: auto;
+    max-width: 800px;
+    margin: 0 auto;
     background-image: url("../img/bunting.png");
     background-repeat: repeat-x;
+    padding:1em;
 }
 
 p {
@@ -58,11 +62,22 @@ p {
     font-family: Cardo;
     text-indent: 15px;
     line-height: 2;
+
 }
 
 .author{
   text-align: right;
   font-size: 10px;
+  font-style: italic;
+}
+.quote{
+  text-align: center;
+  font-size:1.5em;
+  font-style: italic;
+}
+
+.licence{
+  text-align: center;
 }
 
 #img3wa {
@@ -73,4 +88,13 @@ p {
 footer {
     text-align: center;
     font-size: 13px;
+}
+
+.rose{
+  color:#c996c2;
+}
+
+a{
+  text-decoration: none;
+  color:#c996c2;
 }
