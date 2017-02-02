@@ -1,26 +1,13 @@
+html {
+    background-image: url("../img/fond.png");
+}
+
 body {
     max-width: 750px;
     margin: 0 auto;
     font-family: Verdana;
     font-size: 16px;
     color: #787878;
-}
-
-main {
-    background-color: white;
-    padding: 10px 10px 10px 10px;
-    position: relative;
-}
-
-html {
-    background-image: url("../img/fond.png");
-}
-
-.article {
-    float: left;
-    height: 100px;
-    width: 200px;
-    padding: 5px;
 }
 
 
@@ -43,11 +30,17 @@ nav {
     margin-right: 3em;
     width: auto;
     text-align: right;
-    color:#3E5822;
+    color: #3E5822;
 }
 
 
 /* Fin de menu de navigation */
+
+main {
+    background-color: white;
+    padding: 10px 10px 10px 10px;
+    position: relative;
+}
 
 h1 {
     font-size: 24px;
@@ -56,8 +49,11 @@ h1 {
     color: #B8CB21;
 }
 
-footer {
-    color: #7B7B79;
+.article {
+    float: left;
+    height: 100px;
+    width: 200px;
+    padding: 5px;
 }
 
 .button {
@@ -69,7 +65,8 @@ footer {
     float: right;
 }
 
-footer p {
+footer {
+    color: #7B7B79;
     text-align: center;
 }
 
