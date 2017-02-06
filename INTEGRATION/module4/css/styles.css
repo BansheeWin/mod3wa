@@ -1,0 +1,170 @@
+body {
+    background-image: url("../img/fond.png");
+    font-family: 'Slabo 27px', serif;
+}
+
+h1, h2, h3 {
+    font-weight: lighter;
+}
+
+h2 {
+    font-size: 1.5em;
+    text-align: center;
+}
+
+
+/*Menu de navigation ----------------------------*/
+
+header {
+    background-color: #25B3B4;
+    text-align: center;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-color: #1B9CA2;
+    margin-top: 5%;
+    padding-bottom: 20px;
+    vertical-align: middle;
+}
+
+nav {
+    text-align: center;
+    margin: 0 auto;
+}
+
+nav a {
+    padding-right: 30px;
+}
+
+
+/*---------------------------------------------------*/
+
+.top {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+.indent {
+    text-indent: 30px;
+}
+
+.bot {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+
+/*Bloc gauche "Today's special et articles contenus dedans"---------------------------*/
+
+.todays-special {
+    width: 69%;
+    float: left;
+    background-color: #B6DFDD;
+    margin-right: 10px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.todays-special>h1 {
+    font-size: 3em;
+    font-weight: lighter;
+    text-align: center;
+    margin: 10px;
+    padding-top: 30px;
+}
+
+.todays-special>a {
+    text-align: right;
+}
+
+.todays-special p {
+    font-size: 1em;
+    font-family: 'Open Sans', serif;
+    line-height: 1.5;
+}
+
+.article {
+    display: inline-block;
+    max-width: 45%;
+    box-sizing: border-box;
+    text-align: left;
+    margin-right: 10px;
+    padding: 20px;
+}
+
+.button {
+    background-color: #1B9CA2;
+    color: white;
+    padding: 8px;
+    text-align: justify;
+    float: right;
+}
+
+.radius {
+    float: left;
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    padding: 10px;
+}
+
+#blue {
+    color: #1B9CA2;
+}
+
+
+/*---------------------------------------------------*/
+
+
+/*Bloc droit "News&events"---------------------------*/
+
+.news {
+    width: 30%;
+    border-style: solid;
+    border-color: #1B9CA2;
+    border-width: thick;
+    background-color: #25B3B4;
+    display: inline-block;
+    color: white;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+.logod {
+    float: right;
+    margin-right: -80px;
+    margin-top: -80px;
+}
+
+.news i {
+    color: #7DCECD;
+}
+
+#newscolor {
+    color: #7DCECD;
+}
+
+
+/*---------------------------------------------------*/
+
+footer {
+    margin: 30px;
+    text-align: center;
+    font-size: 13px;
+}
+
+#img3wa {
+    height: 50px;
+    width: 50px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    font-size: 1em;
+}
+
+.clear {
+    clear: both;
+}
