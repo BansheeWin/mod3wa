@@ -3,12 +3,13 @@ body {
     font-family: 'Slabo 27px', serif;
 }
 
-h1, h2, h3 {
+h1, h2 {
     font-weight: lighter;
+    font-size: 3em;
 }
 
 h2 {
-    font-size: 1.5em;
+    font-size
     text-align: center;
 }
 
@@ -50,7 +51,8 @@ nav a {
 }
 
 .bot {
-    max-width: 1000px;
+    min-width: 800px;
+    max-width: 1100px;
     margin: 0 auto;
 }
 
@@ -59,20 +61,28 @@ nav a {
 
 .todays-special {
     width: 69%;
-    float: left;
+    float:left;
     background-color: #B6DFDD;
     margin-right: 10px;
     box-sizing: border-box;
     text-align: center;
 }
 
-.todays-special>h1 {
+.todays-special>h2 {
     font-size: 3em;
     font-weight: lighter;
     text-align: center;
     margin: 10px;
     padding-top: 30px;
 }
+article>h3 {
+    font-size: 2em;
+    font-weight: lighter;
+    text-align: center;
+    margin: 10px;
+
+}
+
 
 .todays-special>a {
     text-align: right;
@@ -101,7 +111,7 @@ nav a {
     float: right;
 }
 
-.radius {
+.imgarticle {
     float: left;
     border-radius: 50%;
     height: 100px;
@@ -129,6 +139,7 @@ nav a {
     color: white;
     padding: 30px;
     box-sizing: border-box;
+    vertical-align: top;
 }
 
 .logod {
@@ -143,6 +154,12 @@ nav a {
 
 #newscolor {
     color: #7DCECD;
+}
+
+.news>h2{
+  font-weight: lighter;
+  font-size: 1.5em;
+  margin-top:0;
 }
 
 
