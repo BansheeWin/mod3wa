@@ -1,15 +1,23 @@
-h1,nav {
+* {
+    box-sizing: border-box;
+    outline: none;
+}
+
+h1,
+nav {
     font-family: 'Kaushan Script', cursive;
     font-weight: normal;
 }
-h2{
-    font-size:2em;
+
+h2 {
+    font-size: 2em;
 }
+
 body {
     font-family: 'Playfair Display', serif;
     font-weight: lighter;
-    font-size:1em;
-    color:#556678;
+    font-size: 1em;
+    color: #556678;
 }
 
 header {
@@ -18,8 +26,9 @@ header {
     text-align: center;
     color: white;
     width: 100%;
-    padding-bottom: 215px;
+    padding-bottom: 190px;
     box-sizing: border-box;
+    font-size: 1.3em;
 }
 
 nav {
@@ -29,29 +38,60 @@ nav {
 header p {
     background-color: rgba(255, 255, 255, 0.15);
     margin: 0 auto;
-    padding: 5px;
+    padding: 10px;
 }
 
-a:hover{
+header p:hover {
+
+    animation : masuperanimation 2s;
+}
+@keyframes masuperanimation {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.5);
+    }
+
+    100% {
+        transform: scale(2);
+    }
+}
+
+div
+{
+    margin: 100px;
+    width: 200px;
+    height: 150px;
+    background-color: #008;
+}
+
+div:hover
+{
+    animation: masuperanimation 2s; /* On utilise "ma super animation" définie plus tôt */
+}
+a:hover {
     color: #877FC7;
 }
+
 nav a {
     color: white;
     text-decoration: none;
-    padding-left: 30px;
-    padding-right: 30px;
-    margin-top:20px;
-    margin-left:10px;
-    margin-bottom: 20px;
+    margin: 20px 50px 30px 70px;
     display: inline-block;
-    vertical-align: top;
+    vertical-align: middle;
+}
+
+nav a .fa {
+    display: block;
 }
 
 header h1 {
     color: white;
     text-shadow: 1px 1px 2px black;
-    font-size: 3em;
-    margin-top: 135px;
+    font-size: 2em;
+    margin-top: 115px;
 }
 
 #cours {
@@ -60,7 +100,7 @@ header h1 {
 
 #cours h3 {
     text-align: center;
-    padding:10px 0px 20px 0px;
+    padding: 10px 0px 20px 0px;
 }
 
 #cours img {
@@ -69,13 +109,18 @@ header h1 {
     padding: 0px 20px 40px 20px;
 }
 
-.clear {
+#cours article {
+    line-height: 1.8;
+    font-size: 0.85em;
+}
+
+hr {
     clear: both;
 }
 
 #prof {
     background-image: url("../img/background_section.jpg");
-    background-size:cover;
+    background-size: cover;
     background-position: bottom;
     display: inline-block;
     width: 100%;
@@ -87,14 +132,16 @@ header h1 {
     width: 150px;
 }
 
-#prof div {
-    color:white;
-    width:30%;
+#prof article {
+    color: white;
+    width: 30%;
     vertical-align: top;
     display: inline-block;
     text-align: center;
     padding: 50px 20px 30px 100px;
     box-sizing: border-box;
+    line-height: 1.5;
+    font-weight: 100;
 }
 
 #left {
@@ -106,12 +153,12 @@ header h1 {
 }
 
 iframe {
-    width: 99%;
-    height:400px;
+    width: 100%;
+    height: 350px;
 }
 
 footer {
-    color:white;
+    color: white;
     padding: 20px;
     text-align: center;
     background-color: #8B76D2;
