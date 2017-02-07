@@ -1,14 +1,15 @@
-h1,
-h2,
-h3,
-h4,
-h5 {
+h1,nav {
     font-family: 'Kaushan Script', cursive;
     font-weight: normal;
 }
-
+h2{
+    font-size:2em;
+}
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Playfair Display', serif;
+    font-weight: lighter;
+    font-size:1em;
+    color:#556678;
 }
 
 header {
@@ -17,30 +18,31 @@ header {
     text-align: center;
     color: white;
     width: 100%;
-    font-family: 'Kaushan Script', cursive;
     padding-bottom: 215px;
     box-sizing: border-box;
 }
 
 nav {
     background-color: rgba(255, 255, 255, 0.25);
-    font-size: 1em;
 }
 
 header p {
     background-color: rgba(255, 255, 255, 0.15);
     margin: 0 auto;
-    padding: 5px
+    padding: 5px;
 }
 
+a:hover{
+    color: #877FC7;
+}
 nav a {
     color: white;
     text-decoration: none;
     padding-left: 30px;
     padding-right: 30px;
-    margin-top: 2%;
-    margin-left: 1%;
-    margin-bottom: 30px;
+    margin-top:20px;
+    margin-left:10px;
+    margin-bottom: 20px;
     display: inline-block;
     vertical-align: top;
 }
@@ -73,7 +75,8 @@ header h1 {
 
 #prof {
     background-image: url("../img/background_section.jpg");
-    background-size:200%;
+    background-size:cover;
+    background-position: bottom;
     display: inline-block;
     width: 100%;
     vertical-align: top;
@@ -85,11 +88,12 @@ header h1 {
 }
 
 #prof div {
+    color:white;
     width:30%;
     vertical-align: top;
     display: inline-block;
     text-align: center;
-    padding: 30px 20px 30px 100px;
+    padding: 50px 20px 30px 100px;
     box-sizing: border-box;
 }
 
@@ -103,13 +107,14 @@ header h1 {
 
 iframe {
     width: 99%;
+    height:400px;
 }
 
 footer {
+    color:white;
     padding: 20px;
     text-align: center;
-    background-size:200%;
-    background-image: url("../img/background_section.jpg");
+    background-color: #8B76D2;
 }
 
 hr {
