@@ -1,0 +1,13 @@
+h1 {
+    font-family: Verdana;
+    text-align: center;
+    text-decoration: underline;
+}
+
+p {
+    font-family: monospace;
+}
+
+.score{
+    color:red;
+}

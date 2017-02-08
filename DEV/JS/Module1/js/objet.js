@@ -4,24 +4,23 @@ var jour;
 var mois;
 var annee;
 voiture = new Object();
-voiture.marque = "Ford";
-voiture.annee = "1969";
-voiture.datachat = new Date('2016-5-12');
-voiture.passage = new Array("Toto", "Titi");
+voiture = {
+    "marque": "Ford"
+    , "annee": 1969
+    , "dateAchat": new Date('2016-5-12')
+    , "passage": new Array("Toto", "Titi", "Tata")
+};
 /********************************************************************
         
             Récupération de la date et affectation aux variables
             
 *********************************************************************/
-jour = voiture.datachat.getDate();
-mois = voiture.datachat.getMonth();
-annee = voiture.datachat.getFullYear();
+jour = voiture.dateAchat.getDate();
+mois = voiture.dateAchat.getMonth();
+annee = voiture.dateAchat.getFullYear();
 /********************************************************************
         
             Ecriture dans la page HTML
             
 *********************************************************************/
-document.write("<p>Marque : " + voiture.marque + "</p>");
-document.write("<p>Année de fabrication : " + voiture.annee + "</p>");
-document.write("<p>Date d'achat : " + annee + "-" + mois + "-" + jour + "</p>");
-document.write("<p>Passagers : " + voiture.passage + "</p>");
+document.write("<ul>" + "<li>Marque : " + voiture.marque + "</li>" + "<li>Année de fabrication : " + voiture.annee + "</li>" + "<li>Date d'achat : " + annee + "-" + mois + "-" + jour + "</li>" + "<li>Passagers : " + voiture.passage + "</li>" + "</ul>");
