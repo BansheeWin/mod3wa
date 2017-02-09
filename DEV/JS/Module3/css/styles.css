@@ -8,3 +8,10 @@ p {
     font-family: monospace;
 }
 
+tr{
+    height:30px;
+}
+td{
+    width:30px;
+}
+

@@ -1,7 +1,8 @@
 'use strict'; // Mode strict du JavaScript
-var index;
 var indexPlusLong;
 var phrase;
+var debut;
+var fin;
 indexPlusLong = 0;
 var phrases = [
     "Lorem ipsum dolor sit amet, consectetuer adipiscing elit."
@@ -46,12 +47,20 @@ var phrases = [
     , "Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna."
     , "Sed consequat, leo eget bibendum sodales, augue velit cursus nunc."
 ];
-for (index = 0; index < phrases.length; index++) {
-    //document.write(" " + phrases[j].length + " ");
-    if (phrases[index].length > phrases[indexPlusLong].length) {
-        indexPlusLong = index;
+//Saisie des valeurs de départ et de fin pour la recherche par l'utilisateur
+debut = parseInt(window.prompt("Où souhaitez vous démarrer ? (en 0 et " + phrases.length+" )", 0));
+fin = parseInt(window.prompt("Où souhaitez vous finir ? (en 0 et " + phrases.length+" )", 0));
+//Verification des valeurs rentrées par l'utilisateur
+if (debut < phrases.length && fin <= phrases.length && debut < fin) {
+    //Parcours du tableau pour rechercher la phrase la plus longue
+    for (debut; debut < fin; debut++) {
+        if (phrases[debut].length > phrases[indexPlusLong].length) {
+            indexPlusLong = debut;
+        }
     }
+    phrase = phrases[indexPlusLong];
+    document.write("<p>La longueur de la phrase la plus longue est de : " + phrase.length + "  " + "<p>La phrase la plus longue est : " + phrase + "</p>");
 }
-phrase = phrases[indexPlusLong];
-//console.log(indexPlusLong);
-document.write("<p>La longueur de la phrase la plus longue est de : " + phrase.length + "  " + "<p>La phrase la plus longue est : " + phrase + "</p>");
+else {
+    document.write("<p>Vous avez saisi un nombre trop élevé. Veuillez réessayer </p>");
+}
