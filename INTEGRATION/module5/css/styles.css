@@ -10,7 +10,10 @@ nav {
 }
 
 h2 {
-    font-size: 2em;
+    font-size: 1.5em;
+    text-align: center;
+    margin:2%;
+    font-weight: lighter;
 }
 
 body {
@@ -42,35 +45,33 @@ header p {
 }
 
 header p:hover {
-
-    animation : masuperanimation 2s;
+    animation: masuperanimation 2s;
 }
+
 @keyframes masuperanimation {
     0% {
         transform: scale(1);
     }
-
     50% {
         transform: scale(1.5);
     }
-
     100% {
         transform: scale(2);
     }
 }
 
-div
-{
+div {
     margin: 100px;
     width: 200px;
     height: 150px;
     background-color: #008;
 }
 
-div:hover
-{
-    animation: masuperanimation 2s; /* On utilise "ma super animation" définie plus tôt */
+div:hover {
+    animation: masuperanimation 2s;
+    /* On utilise "ma super animation" définie plus tôt */
 }
+
 a:hover {
     color: #877FC7;
 }
@@ -162,8 +163,120 @@ footer {
     padding: 20px;
     text-align: center;
     background-color: #8B76D2;
+    font-size: 13px;
+}
+
+#img3wa {
+    height: 100px;
+    width: 100px;
+}
+
+footer a {
+    text-decoration: none;
+    font-size: 1em;
 }
 
 hr {
     width: 90%;
+}
+
+h3 {
+    text-align: center;
+    font-weight: lighter; 
+}
+
+table {
+    width: 90%;
+    margin: 1% 5% 1% 5%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+tr,
+td {
+    border: 1px solid #DBDBDB;
+}
+
+td {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+td a {
+    text-decoration: none;
+}
+
+.td_left {
+    text-align: left;
+    padding: 10px;
+}
+
+.grey {
+    background-color: #F2F2F2;
+}
+
+.lightgrey {
+    background-color: #FAFAFA;
+}
+
+#th {
+    text-align: left;
+    font-family: 'Kaushan Script', cursive;
+    font-weight: normal;
+    background-color: #C4A9DF;
+    color: white;
+    padding: 15px;
+    border: none;
+    font-size: 1.2em;
+}
+
+form {
+    width: 90%;
+    margin: 1% 5% 1% 5%;
+    text-align: center;
+    font-size: 11px;
+    ;
+}
+
+form fieldset {
+    text-align: center;
+    margin-top: 2%;
+    padding: 2% 2% 2% 1%;
+}
+
+fieldset legend {
+    text-align: left;
+    font-size:16px;
+}
+
+input[type=text] {
+    border: none;
+    border-bottom: 1px solid #556678;
+    color: #556678;
+    width: 10%;
+    margin-right: 2%;
+}
+
+input[type=radio],
+input[type=checkbox] {
+    border: none;
+    margin-right: 2%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+select {
+    width: 90%;
+    margin: 1% 1% 1% 1%;
+    padding: 1% 0.5% 1% 0.5%;
+    color: #556678;
+}
+
+#submit {
+    color: white;
+    background-color: #8B76D2;
+    margin-top: 1%;
+    padding: 9px;
+    border: 0 none;
 }

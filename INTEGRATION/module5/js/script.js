@@ -1,4 +1,9 @@
-window.onload = function () {
+'use strict';
+
+var date;
+var jan;
+//Fonction horloge intégrée
+/*window.onload = function () {
     date_heure('div_horloge');
 };
 
@@ -29,4 +34,19 @@ function date_heure(id) {
     }, '1000');
     
     return true;
+}
+*/
+
+function showevents(){
+    
+    var prenom = form1.prenom.value;
+    var nom = form1.nom.value;
+   
+    if(nom == "" || prenom ==""){
+        alert("Veuillez renseignez les champs ")
+    }
+    else{
+        alert("Bonjour,"+prenom+" "+nom);
+    }
+    
 }
