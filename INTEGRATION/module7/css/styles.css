@@ -1,0 +1,140 @@
+
+
+
+/* Styles généraux */
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+header{
+    text-align: center;
+    width:80%;
+    margin:0 auto;
+}
+
+main{
+    width:80%;
+    margin:0 auto;
+}
+nav{
+    background-color:#30A894;
+}
+nav a{
+    text-decoration: none;
+    color:white;
+    padding: 2% 4% 2% 4%;
+    font-size:1.5rem;
+    display: inline-block;
+}
+
+nav a:hover{
+    background-color:rgba(255,255,255,0.3);
+}
+h2{
+    background-color:#30A894;
+    font-size:1rem;
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-weight: normal;
+    padding:1% 0 1% 1%;
+    color:white;
+}
+
+div,p,h1 {
+	color:#666;
+	line-height:150%;
+
+}
+
+h1 {
+	padding:0;
+	color:#ccc;
+	text-shadow:1px 1px 1px #aaa;
+	margin-bottom:0;
+}
+
+.gauche{
+    width:70%;
+    display:inline-block;
+    vertical-align:top;
+    margin: 2% 2.55% 0 0;
+    box-sizing:border-box;
+}
+
+.gauche img{
+    width:100%;
+    height:auto;
+}
+
+aside{
+    width:27%;
+    display:inline-block;
+    vertical-align:top;
+    box-sizing:border-box;
+    background-color:#B8DCB1;
+    padding : 0.5% 2% 2% 2%;
+    margin-bottom: 2%;
+}
+aside h2{
+    background-color:#30A894;
+    font-size:1rem;
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-weight: normal;
+    padding:2% 0 2% 2%;
+    color:white;
+}
+footer {
+    color: #7B7B79;
+    text-align: center;
+    font-size:0.5rem;
+    width:70%;
+    margin:0 auto;
+}
+
+#img3wa{
+    width:50px;
+    height:auto;
+}
+
+/* Format Smartphone */
+@media screen and (max-width: 640px) {
+  .green{
+        display:none;
+    }
+    
+    .menu a{
+        display:block;
+        line-height: 100%;
+    }
+    .menu{
+        width:100%;        
+    }
+    
+    .title{
+        text-align :center;
+    }
+	
+}
+/* Format Tablette */
+@media screen and (max-width: 805px){
+	 .green{
+        width: 100%;
+        left:0;
+        right:0; 
+    }
+    
+    .menu a{
+        display:block;
+        line-height: 7vh;
+    }
+    .menu{
+        width:100%;
+    }
+    .container{
+        width:100%;
+    }
+    
+    .gauche{
+        width:90%;
+        margin:5% 5% 5% 5%;
+    }
+    
+}
