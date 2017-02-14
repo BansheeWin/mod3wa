@@ -113,3 +113,9 @@ nav {
 #menu li:hover #bloc {
     display: block;
 }
+
+
+#menu li:hover >a {
+        background-color: #26BDD3;
+    color: white;
+}
