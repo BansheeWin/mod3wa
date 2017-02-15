@@ -1,0 +1,147 @@
+/* Styles généraux */
+
+body {
+    font-family: 'Roboto Slab', serif;
+    background: linear-gradient(135deg, white 0%, white 20%, #E74258 20%, #E74258 45%, #4A2A39 45%, #4A2A39 100%);
+    margin: 0;
+}
+h2{
+    color:white;
+    text-indent: 20px;
+    font-size:1.5em;
+}
+
+
+header {
+    display: inline-block;
+    width: 100%;
+    margin: 0 0 3% 0;
+    vertical-align: middle;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+header img {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: left;
+    margin-right:20%;
+}
+
+main {
+    width: 80%;
+    margin: 0 auto;
+}
+
+nav {
+    margin: 0 auto;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+nav>ul>li {
+    list-style-type: none;
+    color: white;
+    display: inline-block;
+    margin :0 10px;
+}
+
+nav>ul>li>a {
+    vertical-align: middle;
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+hr {
+    display: block;
+    clear: both;
+    height: 0;
+    margin: 0px 0 20px;
+    padding: 0;
+    border: solid 1px #6F5160;
+}
+
+.color {
+    color: #A08F97;
+}
+
+.moto article {
+    width: 24%;
+    background: white;
+    text-align: center;
+    display: inline-block;
+    vertical-align: top;
+    padding: 0 2% 0 2%;
+    box-sizing: border-box;
+    margin:0 8px 2% 0px;
+}
+.moto article:first-child{
+    margin-left:0px;
+}
+.moto article:last-child{
+    margin-right:0px ;
+}
+.moto h3{
+    font-weight:lighter;
+    font-size:2em;
+    color: #C34F5F;
+    margin:0;
+}
+
+article img {
+    width: 85%;
+}
+
+footer {
+    color: #7B7B79;
+    text-align: center;
+    font-size: 0.5rem;
+    width: 70%;
+    margin: 0 auto;
+}
+
+#img3wa {
+    width: 50px;
+    height: auto;
+}
+
+.details {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.details video {
+    width: 40%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.details article{
+    width: 55%;
+    display: inline-block;
+    vertical-align: top;
+    margin-right:40px;
+    color:white;
+}
+.details article i{
+   color:#E74258;
+    padding: 20px 30px 0 0;
+}
+.details article p:first-child{
+    margin-top:0;
+}
+/* Format Smartphone */
+
+@media screen and (max-width: 640px) {
+    
+}
+
+
+/* Format Tablette */
+
+@media screen and (max-width: 805px) {}
