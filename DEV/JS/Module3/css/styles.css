@@ -8,10 +8,17 @@ p {
     font-family: monospace;
 }
 
-tr{
-    height:30px;
-}
-td{
-    width:30px;
+tr {
+    height: 30px;
 }
 
+td {
+    width: 30px;
+    border: 1px ridge #000000;
+    text-align: center;
+}
+
+table {
+    border: 1px ridge #000000;
+    border-collapse: collapse;
+}

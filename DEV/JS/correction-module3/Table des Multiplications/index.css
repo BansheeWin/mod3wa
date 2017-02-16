@@ -1,0 +1,25 @@
+table
+{
+    font-family: "Courier New", monospace;
+}
+table td
+{
+    /* structure */
+    height: 2em;
+    width: 2em;
+
+    /* presentation */
+    background-color: lightblue;
+    text-align: center;
+}
+table td.same-number
+{
+    background-color: midnightblue;
+    color: white;
+}
+table td:hover
+{
+    background-color: lightcyan;
+    color: red;
+    cursor: default;
+}
