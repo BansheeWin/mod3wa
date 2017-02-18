@@ -1,79 +1,22 @@
 'use strict'; // Mode strict du JavaScript
-/* global getRandomInteger */
-/* global requestInteger */
-/* global showImage */
 /*************************************************************************************************/
 /* **************************************** DONNEES JEU **************************************** */
 /*************************************************************************************************/
-// L'unique variable globale est un objet contenant l'état du jeu.
+// L'unique variable globale est un objet contenant l'Ã©tat du jeu.
 var game;
+// DÃ©claration des constantes du jeu, rend le code plus comprÃ©hensible.
+const ARMOR_COPPER = 1;
+const ARMOR_IRON = 2;
+const ARMOR_MAGICAL = 3;
 const LEVEL_EASY = 1;
 const LEVEL_NORMAL = 2;
 const LEVEL_HARD = 3;
-const WEAPON_ONE = 1;
-const WEAPON_TWO = 2;
-const WEAPON_THREE = 3;
-const ARMOR_COPPER = 1;
-const ARMOR_IRON = 2;
-const ARMOR_LEGENDARY = 3;
-/*****************************************************************************/
-/******************************* FONCTIONS JEU *****************************/
+const SWORD_WOOD = 1;
+const SWORD_STEEL = 2;
+const SWORD_EXCALIBUR = 3;
 /*************************************************************************************************/
-function initGame() {
-    game = {}; //new Object();
-    // choix du niveau
-    game.level = requestInteger('Choisissez le niveau de difficulté : 1. Débutant - 2.intermédiaire - 3.expert');
-    switch (game.level) {
-    case 1:
-        // débutant
-        game.dragonHP = getRandomInteger(150, 200);
-        game.playerHP = getRandomInteger(200, 250);
-        break;
-    case 2:
-        // intermédiaire
-        game.dragonHP = getRandomInteger(200, 250);
-        game.playerHP = getRandomInteger(200, 250);
-        break;
-    case 3:
-        // expert
-        game.dragonHP = getRandomInteger(200, 250);
-        game.playerHP = getRandomInteger(150, 200);
-        break;
-    }
-    // choix des armes
-    game.armor = requestInteger('Armure : 1.Caleçon  - 2.Cotte de mailles - 3. Armure légendaire');
-    switch (game.armor) {
-    case 1:
-        // Caleçon
-        game.armorRatio = 1;
-        break;
-    case 2:
-        // Cotte de mailles
-        game.armorRatio = 1.25;
-        break;
-    case 3:
-        // Armure légendaire
-        game.armorRatio = 2;
-        break;
-    }
-    // choix de l'armure
-    game.weapon = requestInteger('Arme : 1. Poireau - 2.Epée - 3.Mjölnir');
-    switch (game.weapon) {
-    case 1:
-        // Poireau
-        game.weaponRatio = 0.5;
-        break;
-    case 2:
-        // Epée
-        game.weaponRatio = 1;
-        break;
-    case 3:
-        // Mjölnir
-        game.weaponRatio = 2;
-        break;
-    }
-}
-
+/* *************************************** FONCTIONS JEU *************************************** */
+/*************************************************************************************************/
 function computeDragonDamagePoint() {
     var damagePoint;
     if (game.difficulty == LEVEL_EASY) {
@@ -110,7 +53,7 @@ function gameLoop() {
     var dragonSpeed;
     var playerSpeed;
     // Le jeu s'exÃ©cute tant que le dragon et le joueur sont vivants.
-    while (game.dragonHP > 0 && game.playerHP > 0) {
+    while (game.hpDragon > 0 && game.hpPlayer > 0) {
         console.log('Tour numÃ©ro ' + game.round);
         // DÃ©termination de la vitesse du dragon et du joueur.
         dragonSpeed = getRandomInteger(10, 20);
@@ -138,35 +81,91 @@ function gameLoop() {
     }
 }
 
-function showGameStates() {
-    // Affichage des stats en fonction des choix utilisateur qui ont étés validés
-    console.log('Points de vie de départ :' + game.playerHP);
-    console.log('Joueur : ' + game.playerHP + ' PV,' + 'Dragon : ' + game.dragonHP + ' PV')
+function initializeGame() {
+    // Initialisation de la variable globale du jeu.
+    game = new Object();
+    game.round = 1;
+    game.difficulty = requestInteger('Niveau de difficultÃ© ?\n' + '1. Facile - 2. Normal - 3. Difficile', 1, 3);
+    /*
+     * DÃ©termination des points de vie de dÃ©part du joueur et du dragon selon
+     * le niveau de difficultÃ©.
+     */
+    switch (game.difficulty) {
+    case LEVEL_EASY:
+        game.hpDragon = getRandomInteger(150, 200);
+        game.hpPlayer = getRandomInteger(200, 250);
+        break;
+    case LEVEL_NORMAL:
+        game.hpDragon = getRandomInteger(200, 250);
+        game.hpPlayer = getRandomInteger(200, 250);
+        break;
+    case LEVEL_HARD:
+        game.hpDragon = getRandomInteger(200, 250);
+        game.hpPlayer = getRandomInteger(150, 200);
+        break;
+    }
+    game.armor = requestInteger('Armure ?\n' + '1. Cuivre - 2. Fer - 3. Magique', 1, 3);
+    game.sword = requestInteger('EpÃ©e ?\n' + '1. Bois - 2. Acier - 3. Excalibur', 1, 3);
+    switch (game.armor) {
+        // Une armure en cuivre protÃ¨ge normalement.
+    case ARMOR_COPPER:
+        game.armorRatio = 1;
+        break;
+        // Une armure en fer diminue un peu les dÃ©gÃ¢ts infligÃ©s.
+    case ARMOR_IRON:
+        game.armorRatio = 1.25;
+        break;
+        // Une armure magique divise par deux les dÃ©gÃ¢ts infligÃ©s.
+    case ARMOR_MAGICAL:
+        game.armorRatio = 2;
+        break;
+    }
+    switch (game.sword) {
+        // Une Ã©pÃ©e en bois nÃ©cessite deux fois plus de dÃ©gÃ¢ts que la normale.
+    case SWORD_WOOD:
+        game.swordRatio = 0.5;
+        break;
+        // Une Ã©pÃ©e en acier inflige des dÃ©gÃ¢ts normaux.
+    case SWORD_STEEL:
+        game.swordRatio = 1;
+        break;
+        // L'Ã©pÃ©e lÃ©gendaire inflige le double de dÃ©gÃ¢ts.
+    case SWORD_EXCALIBUR:
+        game.swordRatio = 2;
+        break;
+    }
+}
+
+function showGameState() {
+    console.log('Dragon : ' + game.hpDragon + ' PV, ' + 'joueur : ' + game.hpPlayer + ' PV');
 }
 
 function showGameWinner() {
-    if (game.dragonHP <= 0) {
+    if (game.hpDragon <= 0) {
         showImage('images/knight.gif');
-        console.log("Vous avez vaincu le dragon !");
-        console.log("Il vous restait " + game.playerHP + " PV");
+        console.log("Vous avez gagnÃ©, vous Ãªtes vraiment fort !");
+        console.log("Il vous restait " + game.hpPlayer + " PV");
     }
-    else // if(game.playerHP <= 0)
+    else // if(game.hpPlayer <= 0)
     {
         showImage('images/dragon.gif');
-        console.log("Le dragon a gagné, vous avez été carbonisé !");
-        console.log("Il restait " + game.dragonHP + " PV au dragon");
+        console.log("Le dragon a gagnÃ©, vous avez Ã©tÃ© carbonisÃ© !");
+        console.log("Il restait " + game.hpDragon + " PV au dragon");
     }
 }
 
 function startGame() {
     // Initialisation du jeu.
     console.clear();
-    initGame();
+    initializeGame();
     // ExÃ©cution du jeu.
-    showGameStates();
+    console.log('Points de vie de dÃ©part :');
+    showGameState();
+    gameLoop();
     // Fin du jeu.
     showGameWinner();
 }
 /*************************************************************************************************/
 /* ************************************** CODE PRINCIPAL *************************************** */
 /*************************************************************************************************/
+startGame();
