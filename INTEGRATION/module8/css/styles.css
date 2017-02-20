@@ -14,12 +14,7 @@ body {
     line-height: 2;
     color: white;
     background: rgb(255, 255, 255);
-    background: -moz-linear-gradient(-45deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 17%, rgba(230, 73, 85, 1) 17%, rgba(230, 73, 85, 1) 40%, rgba(72, 37, 55, 1) 40%, rgba(72, 37, 55, 1) 100%);
-    background: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 17%, rgba(230, 73, 85, 1) 17%, rgba(230, 73, 85, 1) 40%, rgba(72, 37, 55, 1) 40%, rgba(72, 37, 55, 1) 100%);
     background: linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 17%, rgba(230, 73, 85, 1) 17%, rgba(230, 73, 85, 1) 40%, rgba(72, 37, 55, 1) 40%, rgba(72, 37, 55, 1) 100%);
-    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#482537', GradientType=1);
-    /* En attendant de trouver la vraie cause du problÃ¨me */
-    overflow-x: hidden;
 }
 
 .container {
@@ -33,7 +28,7 @@ body {
 nav {
     padding: 25px;
     text-align: right;
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
 }
 
 nav ul li {
@@ -191,8 +186,6 @@ footer div h2 {
     body {
         padding: 25px;
         background: rgb(230, 73, 85);
-        background: -moz-linear-gradient(-45deg, rgba(230, 73, 85, 1) 40%, rgba(72, 37, 55, 1) 40%, rgba(72, 37, 55, 1) 100%);
-        background: -webkit-linear-gradient(-45deg, rgba(230, 73, 85, 1) 40%, rgba(72, 37, 55, 1) 40%, rgba(72, 37, 55, 1) 100%);
         background: linear-gradient(135deg, rgba(230, 73, 85, 1) 40%, rgba(72, 37, 55, 1) 40%, rgba(72, 37, 55, 1) 100%);
     }
     nav {
