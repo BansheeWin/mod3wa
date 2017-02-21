@@ -1,7 +1,3 @@
-/* FONT FACE */
-
-@import url(https://fonts.googleapis.com/css?family=Open+Sans|Bree+Serif|Courgette);
-
 /*GLOBAL */
 
 * {
@@ -148,9 +144,7 @@ section a:hover {
 }
 
 .cta:hover {
-    background-color: #FFCCCC;
-    width: 200px;
-    height: 200px;
+    background-color: #639050;
 }
 
 section.container {
@@ -191,6 +185,12 @@ section.container {
     height: 75px;
     line-height: 69px;
     border-radius: 50%;
+    transition: all 2s;
+}
+
+.colonne:hover >i {
+    background-color: #ff2d76;
+    color: white;
 }
 
 #contact p,
@@ -260,6 +260,7 @@ textarea {
     margin-left: 25%;
     background-color: #f62459;
     color: white;
+    padding: 20px 20px 20px 30px;
 }
 
 
@@ -296,7 +297,6 @@ footer a {
     }
     header {
         display: block;
-        clear: both;
         text-align: center;
     }
     header img {
@@ -306,11 +306,15 @@ footer a {
         margin: 0 47% 0 43%;
     }
     nav {
-        display: inline-block;
-    }
-    nav a {
-        clear: both;
+        float: none;
         display: inline-block;
         vertical-align: top;
+        clear: both;
+        margin-top: 1%;
+    }
+    nav a {}
+    input[type="text"] {
+        width: 98%;
+        display: block;
     }
 }

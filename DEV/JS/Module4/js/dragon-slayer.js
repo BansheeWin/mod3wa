@@ -54,7 +54,7 @@ function gameLoop() {
     var playerSpeed;
     // Le jeu s'exÃ©cute tant que le dragon et le joueur sont vivants.
     while (game.hpDragon > 0 && game.hpPlayer > 0) {
-        console.log('Tour numÃ©ro ' + game.round);
+        document.write('<p style="color:red">Tour numéro ' + game.round + '</p>');
         // DÃ©termination de la vitesse du dragon et du joueur.
         dragonSpeed = getRandomInteger(10, 20);
         playerSpeed = getRandomInteger(10, 20);
@@ -137,33 +137,35 @@ function initializeGame() {
 }
 
 function showGameState() {
-    console.log('Dragon : ' + game.hpDragon + ' PV, ' + 'joueur : ' + game.hpPlayer + ' PV');
+    document.write('<p>Dragon : ' + game.hpDragon + ' PV</p> ' + '<p>Joueur : ' + game.hpPlayer + ' PV</p>');
 }
 
 function showGameWinner() {
     if (game.hpDragon <= 0) {
         showImage('images/knight.gif');
-        console.log("Vous avez gagnÃ©, vous Ãªtes vraiment fort !");
-        console.log("Il vous restait " + game.hpPlayer + " PV");
+        document.write("<p>Vous avez gagnÃ©, vous Ãªtes vraiment fort !</p>");
+        document.write("<p>Il vous restait " + game.hpPlayer + " PV</p>");
     }
     else // if(game.hpPlayer <= 0)
     {
         showImage('images/dragon.gif');
-        console.log("Le dragon a gagnÃ©, vous avez Ã©tÃ© carbonisÃ© !");
-        console.log("Il restait " + game.hpDragon + " PV au dragon");
+        document.write("<p>Le dragon a gagnÃ©, vous avez Ã©tÃ© carbonisÃ© !</p>");
+        document.write("<p>Il restait " + game.hpDragon + " PV au dragon</p>");
     }
 }
 
 function startGame() {
-    // Initialisation du jeu.
+    document.write("<div id='game'>")
+        // Initialisation du jeu.
     console.clear();
     initializeGame();
     // ExÃ©cution du jeu.
-    console.log('Points de vie de dÃ©part :');
+    document.write('<p style="color:red">Points de vie de dÃ©part :</p>');
     showGameState();
     gameLoop();
     // Fin du jeu.
     showGameWinner();
+    document.write("</div>")
 }
 /*************************************************************************************************/
 /* ************************************** CODE PRINCIPAL *************************************** */

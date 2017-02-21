@@ -1,0 +1,14 @@
+html,
+body {
+    height: 20%;
+}
+
+body {
+    background: #f25120;
+}
+
+svg {
+    position: fixed;
+    height: auto;
+    width: 10%;
+}

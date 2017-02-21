@@ -1,3 +1,25 @@
 h1 {
     text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+svg {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+}
+
+* {
+    background-color: #f85312;
+}
+
+#game {
+    width: 100%;
+    margin: 0 auto;
+    columns: 2 300px;
+}
+
+#game p[style] {
+    color: blue;
 }
