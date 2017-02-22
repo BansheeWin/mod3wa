@@ -1,0 +1,17 @@
+div {
+    /* Tout ce qui débordera de cette <div> sera caché */
+    overflow: hidden;
+}
+
+div > img {
+    transition: all 10s ease-in-out;
+}
+
+div>img:first-child {
+    transition: all 10s ease-in-out 3s;
+}
+
+div:hover img {
+    /*   transform: scale(1.6); */
+    filter: hue-rotate(720deg);
+}
