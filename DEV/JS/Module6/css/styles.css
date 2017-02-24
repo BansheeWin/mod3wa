@@ -1,5 +1,7 @@
 body {
     margin: 0 auto;
+    width: 80%;
+    text-align: center;
 }
 
 small {
@@ -9,23 +11,21 @@ small {
 
 #photo-list {
     padding-left: 0;
-    width: 800px;
+    width: 80%;
     list-style-type: none;
+    margin: 0 auto;
 }
 
 #photo-list li {
-    /*structure*/
     display: inline-block;
     margin: 1em;
     padding: 10px;
-    /*presentation*/
     border-radius: 15px;
-    transition: transform 2s;
+    transition: transform 1s;
 }
 
 #photo-list li:hover {
-    background-color: rgba(125, 125, 125, 0.6);
-    transform: scale(1.3);
+    background-color: rgba(125, 125, 142, 1);
 }
 
 #photo-list li.selected {
