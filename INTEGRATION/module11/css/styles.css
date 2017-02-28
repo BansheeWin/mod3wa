@@ -1,0 +1,87 @@
+* {
+    box-sizing: border-box;
+    outline: none;
+    text-decoration: none;
+    transition: all .2s ease 0s;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 1.6rem;
+    line-height: 1.6;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.container {
+    width: 1100px;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+.ribbon {
+    width: 100px;
+    position: absolute;
+    right: 0;
+}
+
+header {
+    background-image: url(../img/bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-color: #96B011;
+    color: white;
+}
+
+#topbar {
+    background-color: rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: .5%;
+    color: white;
+    font-size: 1.2em;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 25px 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+nav a {
+    color: white;
+    padding: 10px 15px;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.1)
+}
+
+#logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 25px;
+}
+
+#cart {
+    text-align: right;
+}
+
+#noel {
+    text-align: center;
+}
+
+#noel h1 {
+    color: #95AF31;
+    font-size: 40px;
+}

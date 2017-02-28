@@ -32,11 +32,13 @@ header {
 }
 
 header h1 {
-    font-size: 3em;
+    font-size: 2em;
+    font-weight: normal;
 }
 
 header p {
-    font-size: 2em;
+    font-family: 'Candal', sans-serif;
+    font-size: 1.5em;
 }
 
 h2 {
@@ -57,14 +59,22 @@ h3 {
 
 .menu ul li {
     text-align: center;
+    transition: transform 1s ease;
 }
 
-.menu ul:hover>a {
-    filter: hue-rotate(360deg);
+.menu ul img {
+    width: 100px;
 }
 
-.menu ul li:hover a {
+.menu ul>a:hover {
     filter: hue-rotate(360deg);
+    transform: rotate(360deg);
+}
+
+.menu ul li:hover {
+    /*    filter: hue-rotate(360deg);*/
+    transform: scale(1.2);
+    border-bottom: 2px solid #FB8A9B;
 }
 
 .menu a {
@@ -94,6 +104,7 @@ h3 {
 .cover p {
     text-align: center;
     margin: 0;
+    color: #fff;
 }
 
 .recherche {
@@ -105,7 +116,7 @@ h3 {
 .recherche input {
     background-color: #FB8A9B;
     border: none;
-    font-size: 1.8em;
+    font-size: 1.4em;
     color: #FDC1CA;
     margin-left: 3%;
     text-transform: uppercase;
@@ -139,6 +150,8 @@ section p {
     text-align: left;
     line-height: 25px;
     margin-top: 10%;
+    font-size: smaller;
+    color: #848484;
 }
 
 section div {
@@ -160,6 +173,8 @@ section div {
 
 .solution span {
     color: #FB8A9B;
+    font-weight: bolder;
+    font-size: larger;
 }
 
 .offre {
@@ -175,7 +190,7 @@ section div {
     display: flex;
     flex-direction: column;
     width: 30%;
-    border: 1px dotted black;
+    border: 1px dashed #546F79;
     padding: 0 5px 20px 5px;
     height: auto;
 }
@@ -279,11 +294,52 @@ footer ul {
 
 footer ul li {
     padding: 20px;
+    flex: 1;
 }
 
 footer img {
-    width: 75px;
+    width: 50px;
     height: auto;
 }
 
-@media screen and (max-width: 810px) {}
+@media screen and (max-width: 810px) {
+    .menu ul {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        padding: 0;
+    }
+    .menu ul li {
+        padding-bottom: 2%;
+    }
+    .menu ul a {
+        padding: 0;
+        margin-bottom: 5%;
+    }
+    .titresection {
+        width: 99%;
+        border-top: 2px dashed #546F79;
+        border-right: 2px dashed #546F79;
+        border-left: 2px dashed #546F79;
+    }
+    .solution,
+    .offre,
+    .contact,
+    section,
+    footer ul {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+    .offre div,
+    .contact div {
+        width: 100%;
+        margin: 2% 0 2% 0;
+    }
+    .recherche,
+    .recherche input {
+        font-size: 1.2rem;
+    }
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Module 12 - Cup of Tea</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS Vendor -->
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/flexslider.css" media="screen" />
+    <!-- CSS Perso -->
+    <link rel="stylesheet" type="text/css" href="css/base.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="css/styles.css" media="screen" />
+    <!-- Perso JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <script src="js/jquery.flexslider-min.js"></script>
+    <script type="text/javascript">
+        $(window).load(function () {
+            $('.flexslider').flexslider({
+                directionNav: false
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <!--HEADER-->
+    <header> <img class="ribbon" src="img/ribbon.svg" alt="élu meilleur thé en 2016" />
+        <section id="topbar">Livraison offerte à partir de 65€ d'achat !</section>
+        <div class="container">
+            <section id="logo">
+                <a href="index.html"> <img src="img/logo.png" alt="Logo de Cup of Tea" /> </a>
+                <section id="cart"> <span>Mon panier</span> <strong>42,00€</strong> </section>
+            </section>
+            <nav> <a href="listing-product.html">Thés</a> <a href="#">Grands crus</a> <a href="#">Accessoires</a> <a href="#">Epicerie</a> <a href="about.html">Notre histoire</a> </nav>
+        </div>
+    </header>
+    <!--MAIN CONTENT-->
+    <main class="container">
+        <section id="noel">
+            <h1>C'est noël, profitez-en !</h1> <img src="img/offre-noel.jpg" alt="" /> <small>Pour toute commande effectuée avant le 20 décembre</small> </section>
+        <section id="slider">
+            <div class="flexslider">
+                <ul class="slides">
+                    <li><img src="img/slider/1.jpg" alt="Photo du slider" /></li>
+                    <li><img src="img/slider/2.jpg" alt="Photo du slider" /></li>
+                </ul>
+            </div>
+        </section>
+        <section id="categorie">
+            <h2><span>Choisissez votre thé</span></h2>
+            <a href="#"> <img src="img/tea/1.jpg" alt="Thé noir" />
+                <h3>Thé noir</h3> </a>
+            <a href="#"> <img src="img/tea/2.jpg" alt="Thé vert" />
+                <h3>Thé vert</h3> </a>
+            <a href="#"> <img src="img/tea/3.jpg" alt="Oolong" />
+                <h3>Oolong</h3> </a>
+            <a href="#"> <img src="img/tea/4.jpg" alt="Thé blanc" />
+                <h3>Thé blanc</h3> </a>
+            <a href="#"> <img src="img/tea/5.jpg" alt="Rooibos" />
+                <h3>Rooibos</h3> </a>
+        </section>
+    </main>
+</body>
+
+</html>
