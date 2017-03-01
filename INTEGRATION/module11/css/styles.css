@@ -48,7 +48,7 @@ main h2:after {
     content: "";
     display: block;
     border-top: 1px solid rgba(176, 144, 103, 0.3);
-    margin-top: -17px;
+    margin-top: -18px;
 }
 
 main h2 span {
