@@ -5,13 +5,11 @@
     <title>Module 12 - Cup of Tea</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- CSS Vendor -->
-    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="css/flexslider.css" media="screen" />
-    <!-- CSS Perso -->
-    <link rel="stylesheet" type="text/css" href="css/base.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="css/styles.css" media="screen" />
-    <!-- Perso JS -->
+    <link rel="stylesheet" type="text/css" href="css/global.css" />
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <link href="https://fonts.googleapis.com/css?family=Amaranth" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
     <script src="js/jquery.flexslider-min.js"></script>
     <script type="text/javascript">
@@ -24,26 +22,28 @@
 </head>
 
 <body>
-    <!--HEADER-->
     <header> <img class="ribbon" src="img/ribbon.svg" alt="élu meilleur thé en 2016" />
         <section id="topbar">Livraison offerte à partir de 65€ d'achat !</section>
         <div class="container">
             <section id="logo">
                 <a href="index.html"> <img src="img/logo.png" alt="Logo de Cup of Tea" /> </a>
-                <section id="cart"> <span>Mon panier</span> <strong>42,00€</strong> </section>
+                <section id="cart"> <span>Mon panier</span> <strong data-prix="0">0,00€</strong> </section>
             </section>
             <nav> <a href="listing-product.html">Thés</a> <a href="#">Grands crus</a> <a href="#">Accessoires</a> <a href="#">Epicerie</a> <a href="about.html">Notre histoire</a> </nav>
         </div>
     </header>
-    <!--MAIN CONTENT-->
     <main class="container">
         <section id="noel">
             <h1>C'est noël, profitez-en !</h1> <img src="img/offre-noel.jpg" alt="" /> <small>Pour toute commande effectuée avant le 20 décembre</small> </section>
         <section id="slider">
             <div class="flexslider">
                 <ul class="slides">
-                    <li><img src="img/slider/1.jpg" alt="Photo du slider" /></li>
-                    <li><img src="img/slider/2.jpg" alt="Photo du slider" /></li>
+                    <li>
+                        <a href="#"><img src="img/slider/1.jpg" alt="Photo du slider" /></a>
+                    </li>
+                    <li>
+                        <a href="listing-product.html"><img src="img/slider/2.jpg" alt="Photo du slider" target="_blank" /></a>
+                    </li>
                 </ul>
             </div>
         </section>
@@ -60,7 +60,73 @@
             <a href="#"> <img src="img/tea/5.jpg" alt="Rooibos" />
                 <h3>Rooibos</h3> </a>
         </section>
+        <section id="tea">
+            <article id="new">
+                <h2><span>Notre nouveauté</span></h2> <img src="img/product/product1.jpg" alt="Thé du Hammam">
+                <h3>Thé du hammam</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <section class="price">
+                    <p>À partir de <strong>8,50€</strong></p>
+                </section> <a class="btn" href="#">Voir ce produit</a> </article>
+            <article id="best">
+                <h2><span>Notre best-seller</span></h2> <img src="img/product/product2.jpg" alt="Infustion Herboriste">
+                <h3>Infusion Herboriste</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <section class="price">
+                    <p>À partir de <strong>7,60€</strong></p>
+                </section> <a class="btn" href="#">Voir ce produit</a> </article>
+            <article id="crush">
+                <h2><span>Notre coup de coeur</span></h2> <img src="img/product/product3.jpg" alt="Blue of London">
+                <h3>Blue of London</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <section class="price">
+                    <p>À partir de <strong>9,00€</strong></p>
+                </section> <a class="btn" href="product.html">Voir ce produit</a> </article>
+        </section>
     </main>
+    <footer>
+        <section id="info">
+            <article> <i class="fa fa-lock"></i> <small>Paiement sécurisé</small> </article>
+            <article> <i class="fa fa-truck"></i> <small>Ma livraison offerte</small> </article>
+            <article> <i class="fa fa-money"></i> <small>Carte de fidélité</small> </article>
+            <article> <i class="fa fa-phone"></i> <small>Service client</small> </article>
+            <article> <i class="fa fa-check-circle"></i> <small>Garantie qualité</small> </article>
+        </section>
+        <section id="links">
+            <article>
+                <h3>Cup of Tea</h3>
+                <ul>
+                    <li>Notre histoire</li>
+                    <li>Nos boutiques</li>
+                    <li>Le Thé de A à Z</li>
+                    <li>Espace clients professionnels</li>
+                    <li>Recrutement</li>
+                    <li>Contactez-nous !</li>
+                    <li>L'École du Thé</li>
+                </ul>
+            </article>
+            <article>
+                <h3>Commandez en ligne</h3>
+                <ul>
+                    <li>Première visite</li>
+                    <li>Aide - FAQ</li>
+                    <li>Service client</li>
+                    <li>Suivre ma commande</li>
+                    <li>Conditions générales de vente</li>
+                    <li>Informations légales</li>
+                </ul>
+            </article>
+            <article>
+                <h3>Suivez-nous !</h3>
+                <ul>
+                    <li>Notre histoire</li>
+                    <li>Nos boutiques</li>
+                    <li>Le Thé de A à Z</li>
+                    <li>Espace clients professionnels</li>
+                </ul>
+            </article>
+        </section>
+    </footer>
 </body>
 
 </html>
