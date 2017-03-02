@@ -5,7 +5,6 @@ const GAUCHE = 37;
 const DROITE = 39;
 const HAUT = 38;
 const BAS = 40;
-var rotate = 0;
 slides = [
     {
         image: 'images/1.jpg'
@@ -34,31 +33,19 @@ slides = [
 ];
 var etat;
 
-function rotateSlider(event) {
-    if (event.deltaY >= 0) {
-        rotate += 10;
-        this.style.transform = "rotate(" + rotate + "deg)";
-        this.style.filter = "hue-rotate(" + rotate + "deg)";
-    }
-    else {
-        rotate -= 10;
-        this.style.transform = "rotate(" + rotate + "deg)";
-        this.style.filter = "hue-rotate(" + rotate + "deg)";
-    }
-    console.log(event);
-}
-
 function onSliderNext() {
     etat.index++;
     if (etat.index == slides.length) {
         etat.index = 0;
     }
     refreshSlider();
+    init();
 }
 
 function onSliderFirst() {
     etat.index = 0;
     refreshSlider();
+    init();
 }
 
 function onSliderPrevious() {
@@ -67,11 +54,13 @@ function onSliderPrevious() {
         etat.index = slides.length - 1;
     }
     refreshSlider();
+    init();
 }
 
 function onSliderLast() {
-    etat.index = 6;
+    etat.index = 5;
     refreshSlider();
+    init();
 }
 
 function onSliderRandom() {
@@ -96,10 +85,10 @@ function onSliderKeyUp(event) {
         onSliderPrevious();
         break;
     case BAS:
-        onSliderPrevious();
+        onSliderLast();
         break;
     case HAUT:
-        onSliderPrevious();
+        onSliderFirst();
         break;
     }
 }
@@ -130,11 +119,11 @@ function onToolbarToggle() {
 
 function refreshSlider() {
     var sliderImage;
-    var sliderLegend;
+    var previewImage;
     sliderImage = document.querySelector('#slider img');
-    sliderLegend = document.querySelector('#slider figcaption');
     sliderImage.src = slides[etat.index].image;
-    sliderLegend.textContent = slides[etat.index].legend;
+    previewImage = document.querySelector('#preview img');previewImage.src = slides[etat.index].image;
+    return sliderImage.src;
 }
 etat = {};
 etat.index = 0;
@@ -142,6 +131,8 @@ etat.timer = null;
 eventListener('#slider-random', 'click', onSliderRandom);
 eventListener('#slider-previous', 'click', onSliderPrevious);
 eventListener('#slider-next', 'click', onSliderNext);
+eventListener('#slider-first', 'click', onSliderFirst);
+eventListener('#slider-last', 'click', onSliderLast);
 eventListener('#slider-toggle', 'click', onSliderToggle);
 eventListener('#toolbar-toggle', 'click', onToolbarToggle);
 eventListener('#slider', 'wheel', rotateSlider);

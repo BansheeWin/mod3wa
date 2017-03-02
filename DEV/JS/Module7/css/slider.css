@@ -1,4 +1,4 @@
-* {
+Skip to content This repository Search Pull requests Issues Gist @BansheeWin Sign out Unwatch 1 Star 0 Fork 0 BansheeWin/mod3wa Code Issues 0 Pull requests 0 Projects 1 Wiki Pulse Graphs Settings Branch: master Find file Copy pathmod3wa/DEV/JS/Module7/css/slider.css ad8e734 6 days ago @BansheeWin BansheeWin Module Javascript 1 contributor RawBlameHistory 74 lines (60 sloc) 973 Bytes * {
     box-sizing: border-box;
 }
 
@@ -32,8 +32,28 @@ header {
     padding-bottom: 2em;
 }
 
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: inline-block;
+}
+
 .hide {
     display: none;
+}
+
+#preview {
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+    opacity: .5;
+    margin-left: 20px;
+    float: right;
+}
+
+#preview img {
+    width: 200px;
+    height: 200px;
 }
 
 .slider {

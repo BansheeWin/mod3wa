@@ -15,6 +15,12 @@
         <nav class="toolbar"> <a id="toolbar-toggle" href="#"><i class="fa fa-arrow-right"></i> Barre d'outils</a>
             <ul class="hide">
                 <li>
+                    <button id="slider-first" title="Image précédente"><i class="fa fa-arrow-up"></i></button>
+                </li>
+                <li>
+                    <button id="slider-last" title="Image précédente"><i class="fa fa-arrow-down"></i></button>
+                </li>
+                <li>
                     <button id="slider-previous" title="Image précédente"><i class="fa fa-backward"></i></button>
                 </li>
                 <li>
@@ -29,13 +35,14 @@
             </ul>
         </nav>
     </header>
-    <main>
-        <figure id="slider" class="slider"> <img src="" alt="Photo du carrousel">
-            <figcaption></figcaption>
-        </figure>
+    <main class="container">
+        <input type="button" value="Démarrer le puzzle" id="start">
+        <canvas id="slider" class="slider"> <img src="" alt="Photo du carrousel"> </canvas>
+        <figure id="preview" class="preview"><img src="" alt="Preview du puzzle"> </figure>
     </main>
     <script src="js/utilities.js"></script>
     <script src="js/slider.js"></script>
+    <script src="js/puzzle.js"></script>
 </body>
 
 </html>

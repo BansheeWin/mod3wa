@@ -2,6 +2,7 @@
 var price;
 var btn;
 var cart;
+var product;
 btn = document.querySelector('.btn');
 price = document.querySelector('.price h4');
 cart = document.querySelector('#cart strong');
