@@ -1,0 +1,46 @@
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="assets/css/index.css">
+    <meta name="viewport" content="width=device-width">
+    <meta charset="utf-8">
+    <title>traductor</title>
+</head>
+
+<body>
+    <header>
+        <h1>Traducteur Anglais - Français</h1> </header>
+    <main>
+        <form action="index.php" method="POST">
+            <ul>
+                <li>
+                    <label for="word">Mot :</label>
+                    <input type="text" id="word" name="word"> </li>
+                <li>
+                    <label for="direction">Sens de traduction :</label>
+                    <select id="direction" name="direction">
+                        <option value="EN">Français vers Anglais</option>
+                        <option value="FR">Anglais vers Français</option>
+                    </select>
+                </li>
+                <li>
+                    <input type="submit" value="Traduire"> </li>
+            </ul>
+        </form>
+        <?=$sText?>
+            <div class="error"> </div>
+            <?php if(!empty($sErrorMsg)){?>
+                <div class="error">
+                    <?=$sErrorMsg?>
+                </div>
+                <?php }else {?>
+                    <div class="error">
+                        <?=$sErrorMsg?>
+                    </div>
+                    <?php } ?>
+    </main>
+    <footer> </footer>
+    <!--  <script src="js/general.js" ></script>-->
+</body>
+
+</html>
