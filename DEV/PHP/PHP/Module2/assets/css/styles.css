@@ -1,0 +1,69 @@
+* {
+    outline: none;
+}
+
+body {
+    width: 800px;
+    margin: 0 auto;
+    background-image: url(../img/bcg.png);
+}
+
+header h1 {
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+}
+
+main {
+    border: 5px double black;
+    border-radius: 10% 0 10% 0;
+    background-position: top top;
+    background-image: url(../img/bcg.png);
+    background-size: cover;
+}
+
+ul {
+    list-style: none;
+}
+
+form {
+    line-height: 2.5em;
+    margin-left: 2%;
+    text-align: center;
+}
+
+.button {
+    display: inline-block;
+    border-radius: 10px 4px 10px 4px;
+    box-shadow: 0px 9px 0px #BF9B7A;
+    background-image: url(../img/bcg.png);
+    background-position: center;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 28px;
+    padding: 10px;
+    width: 200px;
+    cursor: pointer;
+    margin: 30px;
+}
+
+.button:active {
+    -webkit-box-shadow: 0px 2px 0px #BF9B7A;
+    -moz-box-shadow: 0px 2px 0px #BF9B7A;
+    box-shadow: 0px 2px 0px #BF9B7A;
+    position: relative;
+    top: 7px;
+}
+
+textarea {
+    border-radius: 5%;
+    resize: none;
+}
+
+label {
+    margin-right: 1%;
+}
+
+label[for="important"]:before {
+    content: "\002759";
+}

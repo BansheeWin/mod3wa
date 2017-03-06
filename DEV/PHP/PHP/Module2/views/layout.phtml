@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <title>To Do List</title>
+    <link rel="icon" type="image/png" href="assets/img/icon.jpg" />
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css"> </head>
+
+<body>
+    <header>
+        <h1>To Do List</h1> </header>
+    <main>
+        <form method="post" action="inc/add.php">
+            <input class="index" type="hidden" name="index" />
+            <label for="title"> Titre </label>
+            <input type="text" name="title" value="" placeholder="Le nom de votre tâche" />
+            <br />
+            <label for="message"> Description </label>
+            <textarea name="message" rows="10" cols="50" placeholder="La description de votre tâche"></textarea>
+            <br />
+            <label for="date"> Date </label>
+            <input type="date" name="date" value="" />
+            <br />
+            <label for="important"></label>Important
+            <input type="radio" name="important" value="2" />
+            <label for="important"></label>Normal
+            <input type="radio" name="important" value="1" checked/>
+            <label for="important"></label>Pas important
+            <input type="radio" name="important" value="0" />
+            <br />
+            <input type="submit" value="Ajouter" name="envoi" class="button"> </form>
+    </main>
+</body>
+
+</html>
