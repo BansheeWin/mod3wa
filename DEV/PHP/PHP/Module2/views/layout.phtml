@@ -4,34 +4,62 @@
 <head>
     <meta charset="utf-8">
     <title>To Do List</title>
-    <link rel="icon" type="image/png" href="assets/img/icon.jpg" />
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans">
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="assets/css/font-awesome.min.css"> </head>
+    <link rel=" icon " type="image/png " href="assets/img/icon.jpg " />
+    <link rel="stylesheet " href="http://fonts.googleapis.com/css?family=Open+Sans ">
+    <link rel="stylesheet " href="assets/css/styles.css ">
+    <link rel="stylesheet " href="assets/css/font-awesome.min.css "> </head>
 
 <body>
     <header>
         <h1>To Do List</h1> </header>
     <main>
-        <form method="post" action="inc/add.php">
-            <input class="index" type="hidden" name="index" />
-            <label for="title"> Titre </label>
-            <input type="text" name="title" value="" placeholder="Le nom de votre tâche" />
-            <br />
-            <label for="message"> Description </label>
-            <textarea name="message" rows="10" cols="50" placeholder="La description de votre tâche"></textarea>
-            <br />
-            <label for="date"> Date </label>
-            <input type="date" name="date" value="" />
-            <br />
-            <label for="important"></label>Important
-            <input type="radio" name="important" value="2" />
-            <label for="important"></label>Normal
-            <input type="radio" name="important" value="1" checked/>
-            <label for="important"></label>Pas important
-            <input type="radio" name="important" value="0" />
-            <br />
-            <input type="submit" value="Ajouter" name="envoi" class="button"> </form>
+        <div class="tasks ">
+            <form method="post" action="delete.php">
+                <ul>
+                    <?php foreach ($aTasks as $iIndex => $aCols) { ?>
+                        <?php if ($aCols[2]>=date("Y-m-d")){?>
+                            <li class="level_<?= $aCols[3]; ?>">
+                                <input type="checkbox" name="tasks[<?= $iIndex; ?>]"><span class="titre"><?= $aCols[0]; ?></span>
+                                <p class="hidden">
+                                    <?= $aCols[1]; ?>
+                                </p>
+                            </li>
+                            <?php } else { ?>
+                                <li class="level_<?= $aCols[3]; ?>">
+                                    <input type="checkbox" name="tasks[<?= $iIndex; ?>]"><span class="titre"><?= $aCols[0]; ?> - en retard -</span>
+                                    <p class="hidden">
+                                        <?= $aCols[1]; ?>
+                                    </p>
+                                </li>
+                                <?php } ?>
+                                    <hr>
+                                    <?php } ?>
+                </ul>
+                <input type="submit" class="button" value="Supprimer"> </form>
+            <form action="inc/removeAll.php">
+                <input type="submit" value="Tout supprimer" class="button"> </form>
+        </div>
+        <div class="form">
+            <form method="post" action="inc/add.php" class="taskform">
+                <input class="index" type="hidden" name="index" />
+                <label for="title"> Titre </label>
+                <input type="text" name="title" value="" placeholder="Le nom de votre tâche" />
+                <br />
+                <label for="message"> Description </label>
+                <textarea name="message" rows="10" cols="50" placeholder="La description de votre tâche "></textarea>
+                <br />
+                <label for="date"> Date </label>
+                <input type="date" name="date" value="" />
+                <br />
+                <label for="important">Important</label>
+                <input type="radio" name="important" value="2" />
+                <label for="important">Normal</label>
+                <input type="radio" name="important" value="1" checked/>
+                <label for="important">Pas important</label>
+                <input type="radio" name="important" value="0" />
+                <br />
+                <input type="submit" value="Ajouter" name="envoi" class="button"> </form>
+        </div>
     </main>
 </body>
 

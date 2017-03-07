@@ -13,34 +13,55 @@ header h1 {
     font-family: 'Open Sans', sans-serif;
 }
 
-main {
+.tasks {
     border: 5px double black;
-    border-radius: 10% 0 10% 0;
-    background-position: top top;
+    margin-left: 2%;
+    border-radius: 0 10% 10% 0;
+    flex: 1;
+    padding: 2%;
+    background-position: center top;
     background-image: url(../img/bcg.png);
     background-size: cover;
 }
 
-ul {
-    list-style: none;
+main {
+    display: flex;
+    flex-direction: row-reverse;
 }
 
-form {
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+.taskform {
     line-height: 2.5em;
     margin-left: 2%;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.form {
+    flex: 1;
+    border: 5px double black;
+    border-radius: 10% 0 0 10%;
+    background-position: top top;
+    background-image: url(../img/bcg.png);
+    background-size: cover;
+    padding: 1%;
 }
 
 .button {
     display: inline-block;
     border-radius: 10px 4px 10px 4px;
-    box-shadow: 0px 9px 0px #BF9B7A;
-    background-image: url(../img/bcg.png);
+    box-shadow: 0px 9px 0px rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.2);
     background-position: center;
     border: none;
     color: #FFFFFF;
     text-align: center;
-    font-size: 28px;
+    font-size: 20px;
     padding: 10px;
     width: 200px;
     cursor: pointer;
@@ -56,7 +77,6 @@ form {
 }
 
 textarea {
-    border-radius: 5%;
     resize: none;
 }
 
@@ -64,6 +84,67 @@ label {
     margin-right: 1%;
 }
 
-label[for="important"]:before {
-    content: "\002759";
+.hidden {
+    display: none;
+    color: black;
+    border: 1px solid black;
+    padding: 5px;
+    background-color: rgba(250, 250, 250, 0.3);
+    border-radius: 5%;
+}
+
+.titre {
+    font-size: 1.8em;
+    font-family: 'Open Sans', sans-serif;
+    margin-left: 5%;
+}
+
+.level_0 {
+    color: black;
+}
+
+.level_1 {
+    color: blue;
+}
+
+.level_2 {
+    color: red;
+}
+
+li:hover .hidden {
+    display: block;
+}
+
+input[type="radio"] {
+    margin-top: -6%;
+}
+
+input,
+textarea {
+    background-color: rgba(250, 250, 250, 0);
+    border: 5px double black;
+    padding: 5px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+::-webkit-input-placeholder {
+    color: #f00;
+}
+
+::-moz-placeholder {
+    color: #f00;
+}
+
+
+/* firefox 19+ */
+
+:-ms-input-placeholder {
+    color: #f00;
+}
+
+
+/* ie */
+
+input:-moz-placeholder {
+    color: #f00;
 }
