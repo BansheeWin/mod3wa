@@ -122,7 +122,8 @@ function refreshSlider() {
     var previewImage;
     sliderImage = document.querySelector('#slider img');
     sliderImage.src = slides[etat.index].image;
-    previewImage = document.querySelector('#preview img');previewImage.src = slides[etat.index].image;
+    previewImage = document.querySelector('#preview img');
+    previewImage.src = slides[etat.index].image;
     return sliderImage.src;
 }
 etat = {};

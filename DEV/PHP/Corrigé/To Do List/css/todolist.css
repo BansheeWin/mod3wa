@@ -1,0 +1,197 @@
+*
+{
+    box-sizing: border-box;
+}
+
+body
+{
+	/* structure */
+	margin: 0;
+
+	/* presentation */
+	background-color: #273E45;
+	font-family: 'Open Sans', sans-serif;
+}
+
+h1
+{
+	color: #E63531;
+	letter-spacing: 0.1em;
+	text-align: center;
+}
+
+hr
+{
+	border-color: #E8F6FF;
+}
+
+main
+{
+    /* structure */
+    margin: 0 auto;
+    padding: 1em;
+    width: 75%;
+
+    /* presentation */
+    background-color: #E8F6FF;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    box-shadow: 0 0 6px 2px #E8F6FF;
+    color: #122430;
+}
+
+
+/*
+ * Style des libellés des formulaires, positionnés à gauche.
+ */
+.label-left label
+{
+	/* structure */
+	display: inline-block;
+	width: 20%;
+
+	/* presentation */
+	font-size: 0.875em;
+	vertical-align: top;
+}
+
+
+.priority-high
+{
+	color: red;
+}
+
+.priority-low
+{
+	color: green;
+}
+
+.priority-normal
+{
+	color: black;
+}
+
+
+/*
+ * Styles des formulaires.
+ */
+.standard-form
+{
+	margin: 2em auto;
+	width: 85%;
+}
+
+.standard-form fieldset
+{
+	border-radius: 6px;
+	border: 1px solid #122430;
+}
+.standard-form fieldset legend
+{
+    /* structure */
+    padding: 0 0.5em;
+
+    /* presentation */
+    color: #122430;
+	font-size: 0.875em;
+}
+
+.standard-form input,
+.standard-form select,
+.standard-form textarea
+{
+	background-color: #F0F0F0;
+	border: 1px solid #122430;
+}
+
+.standard-form input[type="text"],
+.standard-form textarea
+{
+	padding: 2px;
+	width: 60%;
+}
+
+.standard-form input[type="submit"]
+{
+	/* structure */
+	padding: 0.75em 1.0em;
+
+	/* presentation */
+	background-color: #2E4952;
+	border: none;
+	border-radius: 4px;
+	box-shadow: 0 0 8px #2E4952;
+	color: white;
+	cursor: pointer;
+	font-weight: bold;
+	letter-spacing: 0.1em;
+	transition: background-color 0.25s, box-shadow 0.25s;
+}
+.standard-form input[type="submit"]:hover
+{
+	background-color: #528391;
+	box-shadow: 0 0 8px #528391;
+}
+
+.standard-form select
+{
+	margin: 0;
+	padding: 2px;
+}
+
+.standard-form textarea
+{
+	resize: none;
+}
+
+
+.standard-form ul
+{
+	list-style-type: none;
+}
+.standard-form ul li
+{
+	margin-top: 0.75em;
+}
+
+
+/*
+ * Styles des listes de tâches.
+ */
+.task-list input[type="checkbox"],
+.task-list input[type="checkbox"] + label
+{
+	cursor: pointer;
+	font-size: 0.875em;
+}
+.task-list input[type="checkbox"]:checked + label
+{
+	 /* Lorsqu'une case à cocher est cochée, on barre le label */
+	text-decoration: line-through;
+}
+
+.task-list label strong
+{
+    text-transform: uppercase;
+}
+
+.task-list label + p
+{
+	/* structure */
+	display: none;
+	margin-left: 1.5em; 
+	margin-right: 1.5em; 
+	padding: 1em;
+
+	/* presentation */
+	border: 1px solid #122430;
+	border-radius: 4px;
+	color: #122430;
+	font-size: 0.875em;
+	font-style: italic;
+	text-align: justify;
+}
+.task-list label:hover + p
+{
+	display: block;
+}

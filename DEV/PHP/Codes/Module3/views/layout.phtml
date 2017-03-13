@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <title>PHP</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/styles.css"> </head>
+
+<body>
+    <header>
+        <h1>Bons de commande</h1></header>
+    <main class="container">
+        <table>
+            <caption>Liste des commandes</caption>
+            <thead>
+                <tr>
+                    <th>Commande</th>
+                    <th>Date de la commande</th>
+                    <th>Date de livraison</th>
+                    <th>Statut</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                    foreach ($aOrders as $k => $v) {
+                        echo"<tr class='line_$k'>";
+                        foreach($v as $key=>$tab){
+                            echo"<td>$tab</td>";
+                        }
+                        echo"</tr>";
+                    }
+                ?>
+            </tbody>
+        </table>
+        </section>
+    </main>
+</body>
+
+</html>

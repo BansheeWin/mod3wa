@@ -1,0 +1,36 @@
+* {
+    outline: none;
+}
+
+header h1 {
+    text-align: center;
+    font-family: fantasy;
+}
+
+.container {
+    width: 800px;
+    margin: 0 auto;
+}
+
+main table {
+    margin: 0 auto;
+    width: 80%;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+tr:nth-child(even) {
+    background: #CCC;
+}
+
+tr:nth-child(odd) {
+    background: #FFF;
+}
+
+tr:nth-child(even):hover {
+    background: #FFF;
+}
+
+tr:nth-child(odd):hover {
+    background: #CCC;
+}
