@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <title>PHP</title>
+    <link rel="stylesheet" type="text/css" href="../assets/css/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet"> </head>
+
+<body>
+    <header>
+        <h1>Bons de commande</h1></header>
+    <main class="container"> <a href="../index.php" class="btn">Retour a l'accueil</a>
+        <div class="bon_commande">
+            <div class=infos_client>
+                <p>
+                    <?=$customs['customerName']?>
+                </p>
+                <p>
+                    <?=$customs['contactFirstName']?>
+                        <?=$customs['contactLastName']?>
+                </p>
+                <p>
+                    <?=$customs['addressLine1']?>
+                </p>
+                <p>
+                    <?=$customs['city']?> ,
+                        <?=$customs['postalCode']?>
+                </p>
+            </div>
+            <h3>Commande numéro :
+                        <?=$customs['orderNumber']?>
+                    </h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nom du produit</th>
+                        <th>Type de produit</th>
+                        <th>Quantité commandé</th>
+                        <th>Prix unitaire</th>
+                        <th>Prix total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                if (isset ($orders)):
+                    foreach ($orders as $k) :
+                ?>
+                        <tr class="line_<?=$k[ 'orderNumber']?>">
+                            <td class="orderLine">
+                                <?=$k['productName']?>
+                            </td>
+                            <td class="orderLine">
+                                <?=$k['productLine']?>
+                            </td>
+                            <td class="orderLine">
+                                <?=$k['quantityOrdered']?>
+                            </td>
+                            <td class="orderLine">
+                                <?=$k['priceEach']." €"?>
+                            </td>
+                            <td class="orderLine">
+                                <?=$k['quantityOrdered']*$k['priceEach']." €"?>
+                            </td>
+                        </tr>
+                        <?php
+                    endforeach;
+                endif;
+                ?>
+                </tbody>
+            </table>
+            <?php
+                if (isset ($orders)):
+                    foreach ($orders as $k) :
+                ?>
+                <?php 
+                            $total+=$k['quantityOrdered']*$k['priceEach']
+                        ?>
+                    <?php
+                    endforeach;
+                endif;
+                ?>
+                        <p>Total de la commande :
+                            <?=$total?> €</p>
+        </div>
+        </section>
+    </main>
+</body>
+
+</html>

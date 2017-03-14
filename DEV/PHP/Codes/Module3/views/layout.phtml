@@ -4,12 +4,16 @@
 <head>
     <meta charset="utf-8">
     <title>PHP</title>
-    <link rel="stylesheet" type="text/css" href="assets/css/styles.css"> </head>
+    <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet"> </head>
 
 <body>
     <header>
         <h1>Bons de commande</h1></header>
     <main class="container">
+        <form action="" method="GET">
+            <input type="text" name="search" placeholder="Numéro de commande">
+            <input type="submit" value="Envoyer" /> </form>
         <table>
             <caption>Liste des commandes</caption>
             <thead>
@@ -22,13 +26,28 @@
             </thead>
             <tbody>
                 <?php
-                    foreach ($aOrders as $k => $v) {
-                        echo"<tr class='line_$k'>";
-                        foreach($v as $key=>$tab){
-                            echo"<td>$tab</td>";
-                        }
-                        echo"</tr>";
-                    }
+                if (isset ($orders)):
+                    foreach ($orders as $k) :
+                ?>
+                    <tr class="line_<?=$k[ 'orderNumber']?>">
+                        <td>
+                            <a href="inc/order-form.php?orderNumber=<?=$k['orderNumber']?>">
+                                <?=$k['orderNumber']?>
+                            </a>
+                        </td>
+                        <td>
+                            <?=$k['orderDate']?>
+                        </td>
+                        <td>
+                            <?=$k['shippedDate']?>
+                        </td>
+                        <td>
+                            <?=$k['status']?>
+                        </td>
+                    </tr>
+                    <?php
+                    endforeach;
+                endif;
                 ?>
             </tbody>
         </table>
