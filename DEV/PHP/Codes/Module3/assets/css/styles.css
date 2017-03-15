@@ -3,23 +3,29 @@
 }
 
 .btn {
-    background-color: dodgerblue;
-    color: white;
+    background-color: darkgray;
+    color: black;
     padding: 14px 25px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     margin: 2%;
+    border-radius: 5px;
 }
 
 .btn:hover,
 .btn:active {
-    background-color: dodgerblue;
+    background-color: darkgray;
+}
+
+.btn:hover::before {
+    content: "<<";
+    padding-right: 8px;
 }
 
 body {
     font-family: 'Varela Round', sans-serif;
-    background-color: aquamarine;
+    background-color: #545454;
 }
 
 main {
@@ -39,6 +45,10 @@ header h1 {
     margin: 0 auto;
 }
 
+.form input {
+    margin-bottom: 2%;
+}
+
 main table {
     width: 100%;
     text-align: center;
@@ -51,10 +61,11 @@ table caption {
 }
 
 table thead tr th {
-    background-color: dodgerblue;
+    background-color: #2d2c2c;
     height: 50px;
     font-family: 'Varela Round', sans-serif;
     font-weight: bolder;
+    color: white;
 }
 
 td {
@@ -79,13 +90,16 @@ tr:nth-child(odd) {
 }
 
 .bon_commande {
-    border: 1px solid black;
+    border: 5px white;
+    border-style: solid;
     display: flex;
     flex-direction: column;
+    background-color: darkgray;
+    border-radius: 20px;
 }
 
 .infos_client {
-    width: 20%;
+    width: 30%;
     align-self: flex-end;
 }
 
@@ -94,9 +108,10 @@ tr:nth-child(odd) {
 }
 
 .bon_commande table {
-    width: 100%;
+    width: 99%;
+    margin: 0 auto;
 }
 
 .bon_commande table td {
-    padding: 0;
+    padding: 2px;
 }

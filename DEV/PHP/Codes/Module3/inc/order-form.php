@@ -6,7 +6,7 @@ try {
     echo 'Connexion échouée : ' . $e->getMessage();
 }
 
-if (isset($pdo) && isset($_GET['orderNumber'])) {
+if (isset($pdo) && !empty($_GET['orderNumber'])) {
 	$query = $pdo->prepare('SELECT orderNumber,productName,productLine,quantityOrdered,priceEach FROM orderdetails INNER JOIN products ON orderdetails.productCode=products.productCode WHERE orderdetails.orderNumber=:numero ORDER BY productLine ASC');
 
 	$query->execute(array(':numero' => $_GET['orderNumber']));

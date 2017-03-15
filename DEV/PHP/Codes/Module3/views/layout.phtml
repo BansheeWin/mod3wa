@@ -11,7 +11,7 @@
     <header>
         <h1>Bons de commande</h1></header>
     <main class="container">
-        <form action="" method="GET">
+        <form action="" method="GET" class="form">
             <input type="text" name="search" placeholder="Numéro de commande">
             <input type="submit" value="Envoyer" /> </form>
         <table>
@@ -29,7 +29,7 @@
                 if (isset ($orders)):
                     foreach ($orders as $k) :
                 ?>
-                    <tr class="line_<?=$k[ 'orderNumber']?>">
+                    <tr>
                         <td>
                             <a href="inc/order-form.php?orderNumber=<?=$k['orderNumber']?>">
                                 <?=$k['orderNumber']?>

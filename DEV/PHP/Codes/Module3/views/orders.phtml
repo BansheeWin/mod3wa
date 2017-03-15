@@ -10,7 +10,7 @@
 <body>
     <header>
         <h1>Bons de commande</h1></header>
-    <main class="container"> <a href="../index.php" class="btn">Retour a l'accueil</a>
+    <main class="container"> <a href="../index.php" class="btn">Retour à l'accueil</a>
         <div class="bon_commande">
             <div class=infos_client>
                 <p>
@@ -43,10 +43,11 @@
                 </thead>
                 <tbody>
                     <?php
+                setlocale(LC_MONETARY, 'nl_NL');
                 if (isset ($orders)):
                     foreach ($orders as $k) :
                 ?>
-                        <tr class="line_<?=$k[ 'orderNumber']?>">
+                        <tr>
                             <td class="orderLine">
                                 <?=$k['productName']?>
                             </td>
@@ -57,10 +58,10 @@
                                 <?=$k['quantityOrdered']?>
                             </td>
                             <td class="orderLine">
-                                <?=$k['priceEach']." €"?>
+                                <?=number_format($k['priceEach'],2,',','')." €"?>
                             </td>
                             <td class="orderLine">
-                                <?=$k['quantityOrdered']*$k['priceEach']." €"?>
+                                <?=number_format($k['quantityOrdered']*$k['priceEach'], 2, ',', ' ')." € ";?>
                             </td>
                         </tr>
                         <?php
@@ -80,8 +81,10 @@
                     endforeach;
                 endif;
                 ?>
-                        <p>Total de la commande :
-                            <?=$total?> €</p>
+                        <p>Total HTde la commande :
+                            <?=number_format($total,2,',','')?> € </br>TVA (20%) :
+                                <?=number_format($total*0.20,2,',','')?> € </br>Total TTC de la commande :
+                                    <?=number_format($total*1.20,2,',','')?> €</p>
         </div>
         </section>
     </main>
