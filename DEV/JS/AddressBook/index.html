@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title> Javascript | Address Book</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/5.0.0/normalize.css">
+    <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css">
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="js/events.js"></script>
+    <script src="js/adressbook.js"></script>
+    <script src="js/utilities.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1><i class="fa fa-book" aria-hidden="true"> Carnet d'Adresses</h1></i>
+        <button id="showform"><i class="fa fa-plus" aria-hidden="true"></i> </button>
+        <button id="clearbook"><i class="fa fa-trash-o" aria-hidden="true"></i> </button>
+    </header>
+    <main class="container">
+        <hr class="style">
+        <section id="adressBook"> </section>
+        <section id='form'>
+            <form class="none" id="contact-form" action="#">
+                <label for="civi"> Civilité </label>
+                <select name="civi" id="civi">
+                    <option value="Mr." selected>Monsieur</option>
+                    <option value="Mme">Madame</option>
+                </select>
+                <label for="nom"> Nom </label>
+                <input type="text" name="nom" value="" placeholder="Nom" id="nom" />
+                <label for="prenom"> Prénom </label>
+                <input type="text" name="prenom" value="" placeholder="Prenom" id="prenom">
+                <label for="telephone"> Téléphone </label>
+                <input type="tel" name="telephone" value="" placeholder="Téléphone" id="tel">
+                <input type="submit" id="addData" value="Ajouter" /> </form>
+        </section>
+    </main>
+    <footer></footer>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

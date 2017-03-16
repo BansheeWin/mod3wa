@@ -1,0 +1,62 @@
+* {
+    outline: none;
+}
+
+body {
+    text-align: center;
+    background-color: slategray;
+}
+
+.container {
+    margin: 0 auto;
+    width: 80%;
+}
+
+h1 {
+    font-family: monospace;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    margin: 0 auto;
+}
+
+.none {
+    display: none;
+}
+
+label {
+    margin: 2%;
+}
+
+#adressBook {
+    width: 20%;
+}
+
+#addData {
+    border-radius: 60px;
+    width: 80%;
+    margin: 30px auto;
+    padding: 5px;
+}
+
+hr.style {
+    height: 30px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px 0 0 0;
+    border-radius: 20px;
+}
+
+hr.style:before {
+    display: block;
+    content: "";
+    height: 30px;
+    margin-top: -31px;
+    border-style: solid;
+    border-color: black;
+    border-width: 0 0 1px 0;
+    border-radius: 20px;
+}
