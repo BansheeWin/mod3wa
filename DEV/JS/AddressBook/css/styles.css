@@ -31,8 +31,15 @@ label {
     margin: 2%;
 }
 
-#adressBook {
+#adressBook ul {
     width: 20%;
+    list-style-type: square;
+    text-align: left;
+}
+
+#adressBook ul li a {
+    text-decoration: none;
+    color: black;
 }
 
 #addData {
