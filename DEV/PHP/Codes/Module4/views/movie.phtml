@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/font-awesome/css/font-awesome.min.css">
+    <title>
+        <?=$film?>
+    </title>
+</head>
+
+<body>
+    <main class=container>
+        <h2><?=$title?></h2> 
+        <img src="../assets/img/<?=$img?>" class="cover">
+        <p>Durée :
+            <?=minutesToHours($duration)?>
+        </p>
+        <p>Résumé:</p> <p><?=$synopsis?></p>
+    </main>
+</body>
+
+</html>

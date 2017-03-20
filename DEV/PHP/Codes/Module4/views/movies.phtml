@@ -1,0 +1,11 @@
+<?php
+    foreach($movies as $movie):
+        $duree=minutesToHours($movie['duration']);
+?>
+<div class="film">
+    <a href="php/film.php?title=<?=$movie['title']?>"><img src='assets/img/<?=$movie['cover']?>' alt='Cover du film'></a>
+    <hr>
+    <p class="title"><?=$movie['title']?></p>
+    <p class="duration"><?=$duree?></p>
+</div>
+<?php endforeach;?>

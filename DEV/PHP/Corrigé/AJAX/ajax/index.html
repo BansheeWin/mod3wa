@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>JavaScript</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans">
+    <link rel="stylesheet" href="css/main.css">
+
+    <!-- Librairie jQuery -->
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+    <!-- Fonctions du projet -->
+    <script src="js/ajax.js"></script>
+    <script src="js/events.js"></script>
+</head>
+<body>
+    <header>
+        <h1><i class="fa fa-flask"></i> Exercice AJAX</h1>
+    </header>
+
+    <main>
+        <section id="target">
+            <em>Résultats...</em>
+        </section>
+
+        <form>
+            <fieldset>
+                <legend><i class="fa fa-question-circle"></i> Votre choix</legend>
+                <ul>
+                    <li>
+                        <input type="radio" name="what" value="1" id="get-html-data" checked>
+                        <label for="get-html-data">Récupérer un contenu HTML du serveur</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="what" value="2" id="get-json-data">
+                        <label for="get-json-data">Récupérer un contenu JSON du serveur</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="what" value="3" id="get-html-movies">
+                        <label for="get-html-movies">Récupérer les films</label>
+                    </li>
+                    <li>
+                        <button type="button" id="run">Exécuter</button>
+                    </li>
+                </ul>
+            </fieldset>
+        </form>
+    </main>
+
+    <!-- Code principal du projet -->
+    <script src="js/main.js"></script>
+</body>
+</html>
