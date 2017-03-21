@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/normalize.css">
+     <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Karla|Ranga" rel="stylesheet">
+    <!-- Librairie jQuery -->
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script src="assets/js/events.js"></script>
+
+    <title>Mon Blog | Accueil</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="container">
+            <li id="new"><a href="postcreate.php">Nouveau post</a></li>
+        <?php
+            foreach($categories as $category):
+        ?>
+            <li>
+                <a href="#" class="categ" data-id="<?=$category['id']?>">
+                    <?=$category['libelle']?>
+                </a>
+            </li>
+        <?php
+            endforeach;
+        ?>
+            </ul>
+        </nav>
+    </header>
+    <main class="container">
+       <section id="articles">
+           <?php 
+           include('posts.phtml');
+           ?>
+       </section>
+    </main>
+    <footer></footer>
+        <script src="assets/js/main.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,10 @@
+<?php foreach($posts as $post):?>
+              <h3><?=$post['title']?></h3>
+               <div class="post">
+                   <p><?=$post['content']?></p>
+                   <small><a href="post.php?id=<?=$post['id']?>">Lire la suite -></a></small>
+                   <br/>
+                   <small>Par : <?=$post['pseudo']?> le : <?=$post['date_creation']?> dans : <?=$post['libelle']?></small>
+               </div>
+               <hr>
+           <?php endforeach;?>

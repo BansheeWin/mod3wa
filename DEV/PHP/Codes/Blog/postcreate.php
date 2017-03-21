@@ -1,0 +1,9 @@
+<?php  
+require_once('models/utilities.php');
+require_once('models/categories.php');
+require_once('models/posts.php');
+require_once('models/authors.php');
+$categories=getCategories();
+$posts=getPosts();
+$authors=getAuthors();
+require_once('views/newpost.phtml');
