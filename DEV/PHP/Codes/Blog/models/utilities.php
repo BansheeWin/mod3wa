@@ -9,3 +9,9 @@ function connectDB(){
     }
     return $pdo;
 }
+
+function shortenText($text, $size) {
+    if (strlen($text) > $size)
+        return substr($text, 0, $size).' ...';
+    return $text;
+}

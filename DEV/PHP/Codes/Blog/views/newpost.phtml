@@ -6,11 +6,13 @@
     <link rel="stylesheet" type="text/css" href="assets/css/normalize.css">
      <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Karla|Ranga" rel="stylesheet">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
     <!-- Librairie jQuery -->
     <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
         <script src="assets/js/events.js"></script>
 
-    <title>Mon Blog | Accueil</title>
+    <title>Mon Blog | Admin</title>
 </head>
 <body>
     <header>
@@ -18,26 +20,6 @@
     </header>
     <main class="container">
       <button type="button" id="newpost">Nouveau post</button>
-        <section id="postlist">
-            <table>
-                <thead>
-                    <th>Titre</th>
-                    <th>Contenu</th>
-                    <th>Auteur</th>
-                    <th>Date</th>
-                </thead>
-                <tbody>
-                    <?php foreach($posts as $post):?>
-                        <tr>
-                            <td><?=$post['title']?></td>
-                            <td><?=$post['content']?></td>
-                            <td><?=$post['pseudo']?></td>
-                            <td><?=$post['date_creation']?></td>
-                        </tr>
-                    <?php endforeach;?>
-                </tbody>
-            </table>
-        </section>
        <section id="formcreate">
              <form method="post" action="inc/createpost.php" class="taskform" id="postCreateForm">
                 <label for="categ"> Catégorie </label>
@@ -58,6 +40,19 @@
                 </select>
                 <input type="submit" value="Ajouter" name="envoi" class="button"> </form>
        </section>
+        <section id="postlist">
+            <table>
+                <thead>
+                    <th>Titre</th>
+                    <th>Contenu</th>
+                    <th>Auteur</th>
+                    <th>Date</th>
+                </thead>
+                <tbody>
+                   <?php include('adminPostList.phtml');?>
+                </tbody>
+            </table>
+        </section>
     </main>
     <footer></footer>
     <script src="assets/js/main.js"></script>

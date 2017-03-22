@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../assets/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/normalize.css">
+     <link rel="stylesheet" href="../assets/font-awesome/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Karla|Ranga" rel="stylesheet">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
+    <!-- Librairie jQuery -->
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script src="../assets/js/events.js"></script>
+
+    <title>Mon Blog | <?=$post['title']?></title>
+</head>
+<body>
+    <main class="container">
+       <section id="singlePost">
+         <h2><i class="fa fa-file-text" aria-hidden="true"></i> <?=$post['title']?></h2>
+            <small><?=$post['date_creation']?></small>
+           <p><?=$post['content']?></p>
+          <a href="#formcomment" class="btn"><i class="fa fa-plus-circle" aria-hidden="true"></i> Ajouter un commentaire</a>
+       </section>
+       <?php if(!empty($comments)):?>
+        <section id="comments">
+           
+            <?php foreach($comments as $comment):
+                include('comments.phtml');
+            endforeach;?>       
+        </section>
+            <?php endif;?>
+        <fieldset id="newcomment">
+           <legend><i class="fa fa-comment-o"></i> Nouveau commentaire</legend>
+            <form method="post" action="" id="formcomment">
+                <label for="titre"> Titre </label>
+                <input type="text" id="titre" name="title" value="" placeholder="Le titre de votre commentaire" />
+                <label for="comment"> Commentaire </label>
+                <textarea name="comment" id="comment" value="" placeholder="Votre commentaire"></textarea>
+                <label for="pseudo"> Pseudo </label>
+                <select name="pseudo" id="pseudo">
+                    <?php foreach($authors as $author):?>
+                    <option value=<?=$author['id']?>><?=$author['pseudo']?></option>
+                    <?php endforeach;?>
+                </select>
+                <input type="submit" value="Ajouter" id="addComment"name="envoi" class="btn">
+            </form>
+       </fieldset>
+        
+        
+    
+    </main>
+    <footer></footer>
+        <script src="../assets/js/main.js"></script>  
+</body>
+</html>

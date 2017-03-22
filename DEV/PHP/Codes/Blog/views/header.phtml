@@ -1,0 +1,18 @@
+<header>
+        <nav>
+            <ul class="container">
+            <li id="new"><a href="postcreate.php">Nouveau post</a></li>
+        <?php
+            foreach($categories as $category):
+        ?>
+            <li>
+                <a href="#" class="categ" data-id="<?=$category['id']?>">
+                    <?=$category['libelle']?>
+                </a>
+            </li>
+        <?php
+            endforeach;
+        ?>
+            </ul>
+        </nav>
+    </header>
