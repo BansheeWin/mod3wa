@@ -1,6 +1,6 @@
  <?php foreach($posts as $post):
-                    $title=shortenText($post['title'],30);
-                    $content=shortenText($post['content'],100);
+                    $title=shortenText($post['title'],20);
+                    $content=shortenText($post['content'],80);
                     ?>                      
                         <tr>
                             <td><?=$title?></td>
@@ -8,6 +8,6 @@
                             <td><?=$post['pseudo']?></td>
                             <td><?=$post['date_creation']?></td>
                             <td><a href="#" data-idremove="<?=$post['id']?>" class="remove"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
-                            <td><a href="#" data-idEdit="<?=$post['id']?>" class="edit"><i class="fa fa-pencil" aria-hidden="true"></i></a></td>
+                            <td><a href="inc/editPost.php?id=<?=$post['id']?>" class="edit"><i class="fa fa-pencil" aria-hidden="true"></i></a></td>
                         </tr>
                     <?php endforeach;?>

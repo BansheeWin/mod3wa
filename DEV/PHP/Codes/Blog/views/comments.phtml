@@ -1,4 +1,6 @@
-<fieldset class="comment">
+<?php foreach($comments as $comment):?>
+
+            <fieldset class="comment">
     <legend> <i class="fa fa-comment" aria-hidden="true"></i>
         <?=$comment['titre']?>
     </legend>
@@ -6,4 +8,6 @@
         <hr> <small>
                         Posté le <?=$comment['date_post']?> 
                         par : <?=$comment['pseudo']?>
-                    </small> </fieldset>
+                    </small> 
+</fieldset>
+ <?php endforeach;?>

@@ -6,8 +6,8 @@
     <link rel="stylesheet" type="text/css" href="../assets/css/normalize.css">
      <link rel="stylesheet" href="../assets/font-awesome/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Karla|Ranga" rel="stylesheet">
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../assets/img/favicon.ico" type="image/x-icon">
     <!-- Librairie jQuery -->
     <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
         <script src="../assets/js/events.js"></script>
@@ -15,24 +15,24 @@
     <title>Mon Blog | <?=$post['title']?></title>
 </head>
 <body>
+   <?php include('header.phtml');?>
     <main class="container">
        <section id="singlePost">
-         <h2><i class="fa fa-file-text" aria-hidden="true"></i> <?=$post['title']?></h2>
-            <small><?=$post['date_creation']?></small>
-           <p><?=$post['content']?></p>
+         <h2><i class="fa fa-music" aria-hidden="true"></i> <?=$post['title']?></h2>
+          <small>Posté dans <?=$post['libelle']?> le <?=$post['date_creation']?> par : <?=$post['pseudo']?></small>
+          <hr id="separate"/>   
+           <p><?=nl2br($post['content'])?></p>           
           <a href="#formcomment" class="btn"><i class="fa fa-plus-circle" aria-hidden="true"></i> Ajouter un commentaire</a>
        </section>
        <?php if(!empty($comments)):?>
         <section id="comments">
-           
-            <?php foreach($comments as $comment):
-                include('comments.phtml');
-            endforeach;?>       
+              <?php    include('comments.phtml');?>    
         </section>
             <?php endif;?>
         <fieldset id="newcomment">
            <legend><i class="fa fa-comment-o"></i> Nouveau commentaire</legend>
             <form method="post" action="" id="formcomment">
+               <input type="hidden" id="id" value="<?=$_GET['id']?>">
                 <label for="titre"> Titre </label>
                 <input type="text" id="titre" name="title" value="" placeholder="Le titre de votre commentaire" />
                 <label for="comment"> Commentaire </label>

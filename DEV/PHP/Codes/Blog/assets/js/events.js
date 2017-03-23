@@ -16,16 +16,19 @@ function removePost(e) {
         });
 }
 function onClickShowForm(){
-    $("#postCreateForm").toggle('slow');
+    $("#formcreate").toggle('slow');
 }
 
-function addComment(){
+function addComment(e){
+    e.preventDefault();
+    var idPost=$('#id').val();
     var title=$('#titre').val();
     var comment=$('#comment').val();
     var pseudo=$('#pseudo').val();
     
-    console.log(title,comment,pseudo);
-    $.post('../models/comments.php',{'titre' : title,'commentaire' : comment,'pseudal' : pseudo}, function (htmlRetour) {
+    $.post('../inc/addComment.php',{'id':idPost,'title' : title,'comment' : comment,'pseudo' : pseudo}, function (htmlRetour) {
             $('#comments').html(htmlRetour);
         });
+    
+    $(this).parent('form').trigger('reset');
 }

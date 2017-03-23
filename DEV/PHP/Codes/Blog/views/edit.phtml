@@ -2,24 +2,21 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/normalize.css">
-     <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/normalize.css">
+     <link rel="stylesheet" href="../assets/font-awesome/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Karla|Ranga" rel="stylesheet">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
     <!-- Librairie jQuery -->
     <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
-        <script src="assets/js/events.js"></script>
-
     <title>Mon Blog | Admin</title>
 </head>
 <body>
-    <?php include('header.phtml');?>
     <main class="container">
-      <button type="button" id="newpost">Nouveau post</button>
-       <section id="formcreate" >
-             <form method="post" action="inc/createpost.php" id="postCreateForm" class="hide">
+       <section id="formedit" >
+             <form method="post" action="" id="postCreateForm">
+               <input type="hidden" name="id" value="<?=$_GET['id']?>">
                 <label for="categ"> Catégorie </label>
                 <select name="categ">
                     <?php foreach($categories as $category):?>
@@ -27,9 +24,9 @@
                     <?php endforeach;?>
                 </select>
                 <label for="title"> Titre </label>
-                <input type="text" name="title" value="" placeholder="Le nom de votre article" />
+                <input type="text" name="title" value="<?=htmlspecialchars($post['title'])?>" placeholder="Le nom de votre article" />
                 <label for="content"> Description </label>
-                <textarea name="content" rows="10" cols="50" placeholder="Le contenu de votre article "></textarea>
+                <textarea name="content" rows="10" cols="50" placeholder="Le contenu de votre article"><?=htmlspecialchars($post['content'])?></textarea>
                  <label for="pseudo"> Pseudo </label>
                 <select name="pseudo">
                     <?php foreach($authors as $author):?>
@@ -38,22 +35,8 @@
                 </select>
                 <input type="submit" value="Ajouter" name="envoi" class="btn"> </form>
        </section>
-        <section id="postlist">
-            <table>
-                <thead>
-                    <th>Titre</th>
-                    <th>Contenu</th>
-                    <th>Auteur</th>
-                    <th>Date</th>
-                </thead>
-                <tbody>
-                   <?php include('adminPostList.phtml');?>
-                </tbody>
-            </table>
-        </section>
     </main>
     <footer></footer>
-    <script src="assets/js/main.js"></script>
     
 </body>
 </html>

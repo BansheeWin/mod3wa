@@ -6,7 +6,7 @@
     box-sizing: border-box;
     outline:none;
 }
-
+/* ** */
 body {
     margin: 0;
     padding: 0;
@@ -114,23 +114,63 @@ main {
 .post small a:hover{
     color:red;
 }
-
 #formcreate{
-    margin-top:10%;
-    display:flex;
-    flex-direction:column;
+    margin-top:0;
+    display:none;
 }
 
 #formcreate form{
+    display:flex;
+    flex-direction:column;
     margin:0 auto;
-    width:30%;
+    width:50%;
     text-align: center;
     color:white;
+    justify-content: space-around;
+}
+#formcreate input[type=submit]{
+    margin-top:5%;
+    align-self:flex-end;
+}
+
+#formedit{
+    margin-top:0;
+}
+#separate{
+    width:100%;
+	display: block;
+	clear: both;
+	padding: 0;
+    margin:10px auto;
+	border: 1px solid black;
+	font-family: arial;
+	text-align: center;
+	font-size: 60px;
+	line-height: 1;
+}
+
+#formedit form{
+    display:flex;
+    flex-direction:column;
+    margin:0 auto;
+    width:50%;
+    text-align: center;
+    color:white;
+    justify-content: space-around;
+}
+#formedit input[type=submit]{
+    margin-top:5%;
+    align-self:flex-end;
+}
+#postCreateForm label{
+    align-self:center;
 }
 
 #postlist{
     color:white;
-     background-color:rgba(255,255,255,0.4);
+    background-color:rgba(255,255,255,0.4);
+    margin-top:1%;
+    width:100%;
 }
 #postlist tr td {
     color:white;
@@ -139,19 +179,29 @@ main {
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
+#postlist table{
+    width:100%;
+}
 #singlePost{
     background-color:rgba(255,255,255,0.8);
     padding:5px;
     display:flex;
     flex-direction:column;
+    margin-top: 2%;
 }
 #singlePost h2{
     margin:0;
     color:black;
 }
 #singlePost p{
-    text-indent:20px;
-    padding:10px;
+    padding:20px;
+    margin:0;
+}
+#singlePost small{
+    align-self:flex-end;
+    margin:0;
+    padding-right:10px;
 }
 #comments{
     background-color:rgba(255,255,255,0.8);
@@ -173,7 +223,7 @@ main {
     padding:5px;
     border-radius:10px;
     align-self:flex-end;
-    margin-right:20px;
+    margin: 0 20px 10px 0;
 }
 #newcomment{
     width:50%;
@@ -199,71 +249,4 @@ main {
 #formcomment input[type=submit]{
     margin-top:5%;
     align-self:flex-end;
-}
-/* FOOTER */
-
-footer {
-    color: rgba(255, 255, 255, 0.5);
-    padding: 50px;
-    text-align: center;
-}
-
-footer ul li {
-    padding: 10px;
-    display: inline-block;
-}
-
-footer ul li a {
-    color: white;
-}
-
-footer div h2 {
-    margin: 0;
-}
-
-@media screen and (max-width: 1024px) {
-    body {
-        padding: 25px;
-        background: rgb(230, 73, 85);
-        background: linear-gradient(135deg, rgba(230, 73, 85, 1) 40%, rgba(72, 37, 55, 1) 40%, rgba(72, 37, 55, 1) 100%);
-    }
-    nav {
-        background-color: white;
-    }
-    nav ul li {
-        display: block;
-        margin: 25px;
-    }
-    nav ul li a {
-        color: #482537;
-        padding: 20px 25px;
-    }
-    nav ul li a:hover {
-        color: #e44955;
-    }
-    .work li {
-        width: 70%;
-        margin: 25px auto;
-        display: block;
-    }
-    .work li + li {
-        margin: 25px auto;
-    }
-    .team img {
-        width: inherit;
-    }
-    .media article {
-        width: 70%;
-        margin: 0 auto;
-        display: block;
-        text-align: center;
-    }
-    .social i {
-        display: block;
-        padding: 25px 0;
-    }
-    .social a {
-        text-decoration: none;
-        color: #FF3847;
-    }
 }

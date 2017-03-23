@@ -6,5 +6,4 @@ $idPost=$_GET['id'];
 $post=getSinglePost($idPost);
 $comments=getPostComments($idPost);
 $authors=getAuthors();
-
 include('../views/post.phtml');

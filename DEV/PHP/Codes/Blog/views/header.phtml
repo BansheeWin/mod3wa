@@ -1,8 +1,11 @@
 <header>
         <nav>
             <ul class="container">
-            <li id="new"><a href="postcreate.php">Nouveau post</a></li>
+            <li><a href="../index.php">Accueil</a></li>
+            
+            
         <?php
+            if(!empty($categories)):
             foreach($categories as $category):
         ?>
             <li>
@@ -12,7 +15,11 @@
             </li>
         <?php
             endforeach;
+            
+            else:
         ?>
+           <li id="new"><a href="postcreate.php">Nouveau post</a></li>
+        <?php endif;?>
             </ul>
         </nav>
-    </header>
+</header>

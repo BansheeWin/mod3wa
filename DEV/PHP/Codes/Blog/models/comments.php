@@ -1,5 +1,17 @@
 <?php
+require_once('utilities.php');
+function getPostComments($idPost){
+    $pdo=connectDB();
+    $query = $pdo->prepare('SELECT idArticle,titre,commentaire,date_post,pseudo from comments 
+    INNER JOIN users ON idUsers=users.id
+    WHERE idArticle=:idPost
+    ORDER BY date_post DESC');
 
+	$query->execute(array(':idPost' => $idPost));
+    
+	$comments = $query->fetchAll(PDO::FETCH_ASSOC);
+    return $comments;
+}
 
 function addComment($idPost,$titre,$comment,$date,$idUser){
     $pdo=connectDB();
