@@ -11,13 +11,16 @@
     <!-- Librairie jQuery -->
     <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
         <script src="assets/js/events.js"></script>
-
+  <script src="assets/js/tinymce/js/tinymce/tinymce.min.js"></script>
+  <script>tinymce.init({ selector:'textarea' });</script>
     <title>Mon Blog | Admin</title>
 </head>
 <body>
-    <?php include('header.phtml');?>
+   <header>
+           <h1>Partie administrateur</h1>
+   </header>
     <main class="container">
-      <button type="button" id="newpost">Nouveau post</button>
+      <button type="button" id="newpost"><i class="fa fa-plus" aria-hidden="true"></i></button>
        <section id="formcreate" >
              <form method="post" action="inc/createpost.php" id="postCreateForm" class="hide">
                 <label for="categ"> Catégorie </label>

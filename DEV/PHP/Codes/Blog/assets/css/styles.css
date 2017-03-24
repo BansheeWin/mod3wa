@@ -6,7 +6,7 @@
     box-sizing: border-box;
     outline:none;
 }
-/* ** */
+
 body {
     margin: 0;
     padding: 0;
@@ -14,7 +14,8 @@ body {
     font-size: 1em;
     line-height: 2;
     background-image: url('../img/bcg.jpg');
-    background-size: 100%;
+    background-size: cover;
+    background-position:top;
 }
 
 .container {
@@ -30,6 +31,11 @@ header {
     text-align: right;
     background-color: rgba(255, 255, 255, 0.8);
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.9);
+    position:fixed;
+    z-index:9999;
+    left:0;
+    top:0;
+    right:0;
 }
 header h1{
     text-align:center;
@@ -61,24 +67,7 @@ nav ul li a:hover {
     float:left;
 }
 
-
 /* MAIN */
-
-main h2 {
-    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
-    color: white;
-    padding: 10px 30px;
-    text-transform: uppercase;
-    font-family: "Roboto Slab";
-    font-size: 1.5em;
-    margin: 50px 0 25px;
-    letter-spacing: 1px;
-}
-
-main h2 span {
-    color: rgba(255, 255, 255, 0.7);
-}
-
 main {
     display: flex;
     flex-direction: row;
@@ -97,7 +86,14 @@ main {
     padding:10px;
     border-radius:20px;
 }
-
+.post:first-child {
+    margin-top:8%;
+}
+.post h3{
+    color: #FF1600;
+    text-align:left;
+    margin:10px;
+}
 .post p{
     text-align:left;
 }
@@ -109,10 +105,14 @@ main {
 .post small a{
     text-decoration: none;
     color:white;
+    padding:10px;
 }
 
 .post small a:hover{
-    color:red;
+    color:black;
+    font-weight:bold;
+    background-color:white;
+    border-radius:30px;
 }
 #formcreate{
     margin-top:0;
@@ -179,7 +179,11 @@ main {
     overflow: hidden;
     text-overflow: ellipsis;
 }
-
+#error404 {
+ background-image:url('../img/404.jpg');
+ background-size:85%;
+ background-position:top;
+}
 #postlist table{
     width:100%;
 }
@@ -188,10 +192,10 @@ main {
     padding:5px;
     display:flex;
     flex-direction:column;
-    margin-top: 2%;
+    margin-top: 8%;
 }
 #singlePost h2{
-    margin:0;
+    margin:20px 0 0 20px;
     color:black;
 }
 #singlePost p{
@@ -205,18 +209,29 @@ main {
 }
 #comments{
     background-color:rgba(255,255,255,0.8);
-    padding:5px;
+    padding:10px; 
 }
 .comment{
     background-color:rgba(255,255,255,0.8);
     border:0;
+    border-radius:20px;
+}
+.comment:last-child{
+    margin-bottom: 2%;
 }
 .comment legend{
     padding:5px;
 }
-
+#newpost{
+    margin-top:15%;
+    border-radius:50%;
+    font-size:25px;
+    background: #000;
+    color:white;
+    
+}
 .btn{
-    border:1px solid black;
+    border:1px solid white;
     text-decoration: none;
     background-color: black;
     color:white;
@@ -225,12 +240,16 @@ main {
     align-self:flex-end;
     margin: 0 20px 10px 0;
 }
+.btn:hover{
+    background: white;
+    color: black;
+}
 #newcomment{
     width:50%;
     color:white;
     margin:0 auto;
     border-radius:10px;
-    border-color:black;
+    border-color:white;
     background-color:rgba(0,0,0,0.9);
 }
 #newcomment legend{

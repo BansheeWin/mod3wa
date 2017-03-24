@@ -4,6 +4,9 @@ require_once('../models/authors.php');
 require_once('../models/comments.php');
 $idPost=$_GET['id'];
 $post=getSinglePost($idPost);
+if(!$post){
+    header('location:../views/404.phtml');
+}
 $comments=getPostComments($idPost);
 $authors=getAuthors();
 include('../views/post.phtml');

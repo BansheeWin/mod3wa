@@ -1,0 +1,79 @@
+/*
+ * Styles des formulaires
+ */
+
+.generic-form
+{
+    margin: 0 auto;
+    width: 50%;
+}
+.generic-form fieldset
+{
+    border-color: #01A2A6;
+}
+.generic-form fieldset legend
+{
+    color: #01A2A6;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+}
+.generic-form input[type="password"],
+.generic-form input[type="text"],
+.generic-form select,
+.generic-form textarea
+{
+    /* structure */
+    padding: 2px;
+
+    /* presentation */
+    border: 1px solid grey;
+    transition: background-color 0.33s;
+}
+.generic-form input[type="password"],
+.generic-form input[type="text"],
+.generic-form select,
+.generic-form textarea
+{
+    width: 30em;
+}
+.generic-form input[type="password"]:focus,
+.generic-form input[type="text"]:focus,
+.generic-form select:focus,
+.generic-form textarea:focus
+{
+    background-color: #E3FFFB;
+}
+.generic-form textarea
+{
+    resize: none;
+}
+.generic-form ul
+{
+    list-style-type: none;
+}
+.generic-form ul li
+{
+    margin: 1em 0;
+}
+.generic-form ul li:last-child
+{
+    margin-left: 116px; /* pour aligner avec les autres labels */
+    margin-top: 3em;
+}
+.generic-form ul li label
+{
+    /* structure */
+    display: inline-block;
+
+    /* presentation */
+    color: #2F2933;
+    font-weight: bold;
+}
+.generic-form ul li label.textarea
+{
+    vertical-align: top;
+}
+.generic-form ul li label
+{
+    width: 112px;
+}

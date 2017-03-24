@@ -1,0 +1,29 @@
+*
+{
+    box-sizing: border-box;
+}
+
+
+a
+{
+    text-decoration: none;
+}
+
+form
+{
+    margin-top: 2em;
+}
+form fieldset
+{
+    border-radius: 4px;
+}
+form fieldset legend
+{
+    padding: 0 0.5em;
+}
+
+hr
+{
+    margin-bottom: 2em;
+    margin-top: 2em;
+}

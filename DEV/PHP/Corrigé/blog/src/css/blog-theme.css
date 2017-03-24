@@ -1,0 +1,112 @@
+@import 'https://fonts.googleapis.com/css?family=Amatic+SC|Dosis';
+
+
+/*
+https://color.adobe.com/fr/Friends-and-foes-color-theme-1175537/edit/?copy=true&base=4&rule=Custom&selected=0&name=Copie%20de%20Friends%20and%20foes&mode=rgb&rgbvalues=0.185839,0.161431,0.2,0.005772,0.633724,0.65,0.162514,0.85,0.762621,0.741231,0.95,0.442417,0.999956,1,0.650593&swatchOrder=0,1,2,3,4
+*/
+
+a
+{
+    color: #01A2A6;
+    transition: all 0.25s;
+}
+a:hover
+{
+    color: #29D9C2;
+}
+
+body
+{
+    background: url('../images/theme/paper.png') repeat;
+    font-family: 'Dosis', sans-serif;
+}
+
+h1
+{
+    /* structure */
+    height: 96px; /* identique à header */
+    margin: 0;
+
+    font-family: 'Amatic SC', cursive;
+    line-height: 96px;
+    text-align: center;
+}
+h1 a:hover
+{
+    color: #BDF271;
+}
+
+h1, h2
+{
+    color: #01A2A6;
+    letter-spacing: 0.1em;
+}
+
+header
+{
+    /* structure */
+    height: 128px;
+    margin-bottom: 2em;
+
+    /* presentation */
+    background-color: #2F2933;
+    border-bottom: 6px solid #01A2A6;
+}
+header nav a
+{
+    float: right;
+    margin-right: 2em;
+}
+
+footer,
+main
+{
+    margin: 0 auto;
+    width: 85%;
+}
+footer
+{
+    margin-bottom: 3em;
+    margin-top: 3em;
+}
+
+
+.edit
+{
+}
+
+.remove
+{
+}
+
+
+/*
+ * Styles des commentaires des articles du blog
+ */
+.comment
+{
+    list-style-type: none;
+}
+.comment h4
+{
+    color: #2F2933;
+}
+.comment-list
+{
+}
+
+
+/*
+ * Styles des articles du blog
+ */
+.post
+{
+    list-style-type: none;
+}
+.post h3
+{
+    color: #2F2933;
+}
+.post-list
+{
+}
