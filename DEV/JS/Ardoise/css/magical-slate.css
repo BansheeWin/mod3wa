@@ -1,0 +1,61 @@
+#slate{
+    border: 10px ridge gold;
+   cursor: url('../images/pen.cur'),default;
+}
+
+#color-palette{
+    border: 2px solid black;
+}
+
+#colors{
+    list-style-type:none;
+}
+#colors li{
+    height:20px;
+    width:20px;
+    border-radius:50%;
+}
+#colors #red{
+    background: red;
+}
+
+#colors #green{
+    background: green;
+}
+#colors #blue{
+    background: blue;
+}
+
+.pen-color{
+    display:inline-block;
+    height:15px;
+    width:15px;
+    border-radius:50%;
+    border:1px solid black;
+}
+
+.pen-color.black{
+    background-color: black;
+}
+.pen-color.maroon{
+    background-color: #5C2121;
+}
+.pen-color.red{
+    background-color: #B9121B;
+}
+.pen-color.yellow{
+    background-color: #FFBD07;
+}
+.pen-color.green{
+    background-color: #13B813;
+}
+.pen-color.seagreen{
+    background-color: #029E9A;
+}
+.pen-color.blue{
+    background-color: #0378A6;
+}
+
+ul li{
+    line-height:30px;
+}
