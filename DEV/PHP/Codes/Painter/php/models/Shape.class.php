@@ -1,11 +1,28 @@
 <?php
 
+
 abstract class Shape
 {
 
     protected $sColor;
-    protected $iOpacity;
+    protected $oCoords;
+    protected $fOpacity;
 
+    /**
+     * Shape constructor.
+     * @param $sColor
+     * @param $oCoords
+     * @param $fOpacity
+     */
+    public function __construct()
+    {
+        $this->sColor = 'black';
+        $this->oCoords = new Point();
+        $this->fOpacity = '1';
+    }
+
+
+    //abstract public function draw($arg);
     /**
      * @param mixed $sColor
      */
@@ -15,11 +32,18 @@ abstract class Shape
     }
 
     /**
-     * @param mixed $iOpacity
+     * @param $x
+     * @param $y
      */
-    public function setIOpacity($iOpacity)
+    public function setOCoord($x, $y){
+        $this->oCoords->moveTo($x,$y);
+    }
+    /**
+     * @param mixed $fOpacity
+     */
+    public function setFOpacity($fOpacity)
     {
-        $this->iOpacity = $iOpacity;
+        $this->fOpacity = $fOpacity;
     }
 
 }
