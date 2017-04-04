@@ -1,0 +1,49 @@
+<h2>Création d'un compte client</h2>
+<form method="POST" action="" class="generic-form">
+
+    <fieldset>
+        <legend><i class="fa fa-lock" aria-hidden="true"></i> Informations d'authentification</legend>
+        <label for="email">Email :</label>
+        <input id="email" type="email" name="email" required>
+
+        <label for="pwd">Mot de passe :</label>
+        <input id="pwd" type="password" name="pwd" required>
+    </fieldset>
+        <fieldset>
+            <legend><i class="fa fa-book" aria-hidden="true"></i> Coordonées et informations complémentaires</legend>
+            <label for="firstName">Prénom :</label>
+            <input id="firstName" type="text" name="firstName" required>
+
+            <label for="lastName">Nom :</label>
+            <input id="lastName" type="text" name="lastName" required>
+
+
+
+            <label for="birthDate">Date de naissance :</label>
+            <input id="birthDate" type="date" name="birthDate" required>
+
+            <label for="address">Adresse :</label>
+            <input id="address" type="text" name="address" required>
+
+            <label for="city">Ville :</label>
+            <input id="city" type="text" name="city" required>
+
+            <label for="zipCode">Code Postal :</label>
+            <input id="zipCode" type="text" name="zipCode" class="zip-code" required>
+
+            <label for="country">Pays :</label>
+            <select name="country"  required>
+                <option value="France">France</option>
+                <option value="Espagne">Espagne</option>
+                <option value="Royaume-Uni">Royaume-Uni</option>
+                <option value="Allemagne">Allemagne</option>
+            </select>
+
+            <label for="phone">Téléphone :</label>
+            <input id="phone" type="tel" name="phone" class="phone" required>
+
+            <input type="submit" value="Envoyer" class="button">
+        </fieldset>
+
+    </form>
+
