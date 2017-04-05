@@ -10,7 +10,11 @@ class UserController
          * L'argument $http est un objet permettant de faire des redirections etc.
          * L'argument $queryFields contient l'équivalent de $_GET en PHP natif.
          */
+        $user = new UserSession();
+        if(!empty($_SESSION)){
 
+            echo 'Bonjour ' . $user->getFullName();
+        }
     }
 
     public function httpPostMethod(Http $http, array $formFields)
@@ -23,11 +27,12 @@ class UserController
          */
 
         if(!empty($formFields['firstName'])){
+            $userModel = new UserModel();
             $insert = array(
                 ':firstName' => $formFields['firstName'],
                 ':lastName' => $formFields['lastName'],
                 ':email' => $formFields['email'],
-                ':pwd' => $formFields['pwd'],
+                ':pwd' => $userModel->setPassword($formFields['pwd']),
                 ':birthDate' => $formFields['birthDate'],
                 ':address' => $formFields['address'],
                 ':city' => $formFields['city'],
@@ -36,10 +41,10 @@ class UserController
                 ':phone' => $formFields['phone'],
 
             );
-            $userModel = new UserModel();
+
 
             $userModel->insertUser($insert);
         }
-        header('Location: user');
+        header('Location:');
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-class HomeController
+class LoginController
 {
     public function httpGetMethod(Http $http, array $queryFields)
     {
@@ -10,14 +10,6 @@ class HomeController
          * L'argument $http est un objet permettant de faire des redirections etc.
          * L'argument $queryFields contient l'équivalent de $_GET en PHP natif.
          */
-
-         $user= new UserSession();
-         echo 'Bonjour '. $user->getFullName();
-        $mealModel = new MealModel();
-
-        return [
-            'meals' => $mealModel->listAll()
-        ];
 
     }
 
@@ -29,5 +21,25 @@ class HomeController
          * L'argument $http est un objet permettant de faire des redirections etc.
          * L'argument $formFields contient l'équivalent de $_POST en PHP natif.
          */
+        $user= new UserModel();
+        if(!empty($formFields['email'])&& !empty($formFields['email'])){
+            $email=$formFields['email'];
+            $pwd=$formFields['pwd'];
+
+
+            $values=$user->loginUser($email,$pwd);
+
+        }
+        if($values!=null) {
+            $userSession = new UserSession();
+
+            $userSession->create($values['Id'], $values['FirstName'], $values['LastName'],
+                $values['Email']);
+
+        }
+        else{
+            echo 'Réesaye';
+        }
+
     }
 }

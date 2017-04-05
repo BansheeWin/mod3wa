@@ -1,6 +1,17 @@
-<h2>Création d'un compte client</h2>
-<form method="POST" action="" class="generic-form">
+<?php
 
+if(session_status() == PHP_SESSION_NONE):?>
+<form action="user/login">
+    <input type="submit" value="Connexion" class="button button-primary">
+</form>
+<?php endif;?>
+<form action="../">
+    <input type="submit" value="Annuler" class="button button-cancel">
+</form>
+
+<h2>Création d'un compte client</h2>
+
+<form method="POST" action="" class="generic-form">
     <fieldset>
         <legend><i class="fa fa-lock" aria-hidden="true"></i> Informations d'authentification</legend>
         <label for="email">Email :</label>
