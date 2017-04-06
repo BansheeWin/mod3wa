@@ -1,11 +1,37 @@
 <?php
-session_start();
+try {
 
-//echo session_id();
-/*
-$_SESSION['login']='mail@mail.fr';
-$_SESSION['is_admin']=true;
-*/
-var_dump($_SESSION);
+    $oUserModel = new UserModel();
+    $oUserModel->signUp();
 
-echo '<script>alert(document.cookie);</script>';
+
+// ici du coup on ne passe pas si login existe
+    echo 'Le compte n\'existe pas encore';
+
+} catch (DomainException $e) {
+    echo $e->getMessage();
+    /*
+    return [
+    'error_message' 	=>  $e->getMessage();
+    ];*/
+}
+
+class  UserModel
+{
+    public function signUp()
+    {
+
+        if ($this->verifie_si_login_exists()) {
+            throw new DomainException('Un compte est deja associe à cette adresse mail');
+        }
+
+
+// Mon inscription en SQL ICI
+    }
+
+
+    public function verifie_si_login_exists()
+    {
+        return false;
+    }
+}

@@ -10,11 +10,18 @@ class UserController
          * L'argument $http est un objet permettant de faire des redirections etc.
          * L'argument $queryFields contient l'équivalent de $_GET en PHP natif.
          */
-        $user = new UserSession();
-        if(!empty($_SESSION)){
+        $user= new UserSession();
+        $userIdentity=$user->getFullName();
+        $userEmail=$user->getEmail();
+        $isConnected=$user->isAuthenticated();
+        $mealModel = new MealModel();
 
-            echo 'Bonjour ' . $user->getFullName();
-        }
+        return [
+            'userIdentity' => $userIdentity,
+            'userEmail' => $userEmail,
+            'isConnected' => $isConnected,
+            'meals' => $mealModel->listAll()
+        ];
     }
 
     public function httpPostMethod(Http $http, array $formFields)
@@ -41,10 +48,18 @@ class UserController
                 ':phone' => $formFields['phone'],
 
             );
+            try {
+                $idUser = $userModel->insertUser($insert);
+                $user= new UserSession();
+                $user->create($idUser,$formFields['firstName'],
+                    $formFields['lastName'],$formFields['email']);
+                $http->redirectTo('../');
+            }
+            catch(DomainException $e){
+                return ['error_message' => $e->getMessage()];
+            }
 
-
-            $userModel->insertUser($insert);
         }
-        header('Location:');
+
     }
 }

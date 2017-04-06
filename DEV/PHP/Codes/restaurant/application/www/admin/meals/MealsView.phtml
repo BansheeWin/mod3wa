@@ -1,0 +1,26 @@
+<!-- Liste des aliments -->
+<table class="generic-table ">
+    <caption>Liste des menus</caption>
+    <thead>
+    <tr>
+        <th>Nom</th>
+        <th>Descriptif</th>
+        <th>Prix</th>
+    </tr>
+
+    </thead>
+    <tbody>
+    <?php foreach($meals as $meal): ?>
+        <tr>
+            <td>
+                <strong><?= $meal['Name']; ?></strong>
+            </td>
+
+            <td>
+                <p><?= $meal['Description']; ?></p>
+            </td>
+            <td class="number"><strong><?= number_format($meal['SalePrice'], 2) ?></strong> €</td>
+        </tr>
+    <?php endforeach; ?>
+    </tbody>
+</table>

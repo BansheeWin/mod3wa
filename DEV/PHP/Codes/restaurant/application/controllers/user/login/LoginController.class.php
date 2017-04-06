@@ -10,7 +10,12 @@ class LoginController
          * L'argument $http est un objet permettant de faire des redirections etc.
          * L'argument $queryFields contient l'équivalent de $_GET en PHP natif.
          */
+        $userSession = new UserSession();
+        $isConnected=$userSession->isAuthenticated();
 
+        if(isset($isConnected)&&$isConnected==true):
+            $http->redirectTo('../');
+        endif;
     }
 
     public function httpPostMethod(Http $http, array $formFields)
@@ -22,6 +27,7 @@ class LoginController
          * L'argument $formFields contient l'équivalent de $_POST en PHP natif.
          */
         $user= new UserModel();
+
         if(!empty($formFields['email'])&& !empty($formFields['email'])){
             $email=$formFields['email'];
             $pwd=$formFields['pwd'];
@@ -36,6 +42,7 @@ class LoginController
             $userSession->create($values['Id'], $values['FirstName'], $values['LastName'],
                 $values['Email']);
 
+            $http->redirectTo('../');
         }
         else{
             echo 'Réesaye';

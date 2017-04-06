@@ -1,0 +1,39 @@
+<!-- Liste des aliments -->
+<table class="generic-table">
+    <caption>Liste des utilisateurs</caption>
+    <thead>
+    <tr>
+        <th>Id</th>
+
+        <th>Prénom</th>
+        <th>Nom</th>
+        <th>Email</th>
+        <th>Date de naissance</th>
+        <th>Adresse</th>
+        <th>Ville</th>
+        <th>CP</th>
+        <th>Pays</th>
+        <th>Tel</th>
+        <th>Création de compte</th>
+
+    </tr>
+
+    </thead>
+    <tbody>
+    <?php foreach ($users as $user): ?>
+        <tr>
+            <td><?= $user['Id'] ?></td>
+            <td><?= $user['FirstName'] ?></td>
+            <td><?= $user['LastName'] ?></td>
+            <td><?= $user['Email'] ?></td>
+            <td><?= $user['BirthDate'] ?></td>
+            <td><?= $user['Address'] ?></td>
+            <td><?= $user['City'] ?></td>
+            <td><?= $user['ZipCode'] ?></td>
+            <td><?= $user['Country'] ?></td>
+            <td><?= $user['Phone'] ?></td>
+            <td><?= $user['CreationTimestamp'] ?></td>
+        </tr>
+    <?php endforeach; ?>
+    </tbody>
+</table>

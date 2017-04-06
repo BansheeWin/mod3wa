@@ -1,10 +1,17 @@
 <!-- Message de notification -->
 
 <!-- Code HTML à écrire -->
+<?php if(isset($isConnected)&&$isConnected==true):?>
+<?=$userIdentity.'</br></br>'?>
+    <a href="index.php/admin/users" class="button button-primary">Liste des utilisateurs</a>
+    <a href="index.php/admin/meals" class="button button-primary">Liste des menus</a>
+    <a href="index.php/user/logout" class="button button-cancel">Déconnexion</a>
 
-<form action="index.php/user">
-    <input type="submit" value="Inscription" class="button button-primary">
-</form>
+<?php else:?>
+    <a href="index.php/user" class="button button-primary">Inscription</a>
+    <a href="index.php/user/login" class="button button-primary">Connexion</a>
+<?php endif;?>
+
 <!-- Liste des aliments -->
 <table class="generic-table meal-list">
     <caption>Carte du restaurant</caption>
