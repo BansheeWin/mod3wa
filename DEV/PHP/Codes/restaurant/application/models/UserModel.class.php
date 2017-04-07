@@ -31,7 +31,7 @@ VALUES('',:firstName,:lastName,:email,:pwd,:birthDate,:address,:city,:zipCode,:c
 
     public function setPassword($mdp)
     {
-        return password_hash($mdp, PASSWORD_BCRYPT);
+            return password_hash($mdp, PASSWORD_BCRYPT);
     }
 
     public function loginUser($email, $password)

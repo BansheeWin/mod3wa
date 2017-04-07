@@ -34,32 +34,32 @@ class UserController
          */
 
         if(!empty($formFields['firstName'])){
-            $userModel = new UserModel();
-            $insert = array(
-                ':firstName' => $formFields['firstName'],
-                ':lastName' => $formFields['lastName'],
-                ':email' => $formFields['email'],
-                ':pwd' => $userModel->setPassword($formFields['pwd']),
-                ':birthDate' => $formFields['birthDate'],
-                ':address' => $formFields['address'],
-                ':city' => $formFields['city'],
-                ':zipCode' => $formFields['zipCode'],
-                ':country' => $formFields['country'],
-                ':phone' => $formFields['phone'],
+                $userModel = new UserModel();
+                $insert = array(
+                    ':firstName' => $formFields['firstName'],
+                    ':lastName' => $formFields['lastName'],
+                    ':email' => $formFields['email'],
+                    ':pwd' => $userModel->setPassword($formFields['pwd']),
+                    ':birthDate' => $formFields['birthDate'],
+                    ':address' => $formFields['address'],
+                    ':city' => $formFields['city'],
+                    ':zipCode' => $formFields['zipCode'],
+                    ':country' => $formFields['country'],
+                    ':phone' => $formFields['phone'],
 
-            );
-            try {
-                $idUser = $userModel->insertUser($insert);
-                $user= new UserSession();
-                $user->create($idUser,$formFields['firstName'],
-                    $formFields['lastName'],$formFields['email']);
-                $http->redirectTo('../');
-            }
-            catch(DomainException $e){
-                return ['error_message' => $e->getMessage()];
+                );
+                try {
+                    $idUser = $userModel->insertUser($insert);
+                    $user = new UserSession();
+                    $user->create($idUser, $formFields['firstName'],
+                        $formFields['lastName'], $formFields['email']);
+                    $http->redirectTo('../');
+                } catch (DomainException $e) {
+                    return ['error_message' => $e->getMessage()];
+                }
             }
 
         }
 
-    }
+
 }

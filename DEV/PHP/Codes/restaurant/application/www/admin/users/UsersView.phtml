@@ -33,6 +33,7 @@
             <td><?= $user['Country'] ?></td>
             <td><?= $user['Phone'] ?></td>
             <td><?= $user['CreationTimestamp'] ?></td>
+            <td><a href="users?id=<?=$user['Id']?>"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
         </tr>
     <?php endforeach; ?>
     </tbody>

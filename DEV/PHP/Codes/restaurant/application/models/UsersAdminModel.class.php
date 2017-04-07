@@ -15,4 +15,10 @@ class UsersAdminModel
 
         return $database->query('SELECT * FROM User');
     }
+
+    public function deleteUser($id){
+        $database = new Database();
+
+        return $database->queryOne('DELETE FROM User WHERE Id=?',[$id]);
+    }
 }
