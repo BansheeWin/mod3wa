@@ -1,0 +1,54 @@
+    <!-- Affichage du template lié à la vue -->
+    <h2><i class="fa fa-check"></i> Payer la commande</h2>
+
+    <section class="invoice">
+        <p><strong><?=$user['FirstName'].' '.$user['LastName'];?></strong></p>
+        <p><?=$user['Address'];?></p>
+        <p><?=$user['ZipCode'];?> <span class="city"><?=$user['City'];?></span></p>
+    </section>
+
+    <table class="generic-table meal-list">
+        <caption>Récapitulatif de la commande</caption>
+        <thead>
+        <tr>
+            <th>Nom</th>
+            <th class="number">Quantité</th>
+            <th class="number">Prix Unitaire</th>
+            <th class="number">Prix Total</th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php
+        $fHT = 0;
+        foreach ($basket as $aInfosBasket) :
+            $fTotalItem = $aInfosBasket['SalePrice']*$aInfosBasket['Qte'];
+            $fHT += $fTotalItem;
+            ?>
+            <tr data-id=<?= (int) $aInfosBasket['Id'];?>>
+                <td>
+                    <img src="../application/www/images/meals/<?= $aInfosBasket['Photo']?>" width="25%">
+                    <em><?= htmlspecialchars($aInfosBasket['Name']);?></em>
+                </td>
+                <td class="number"><?= htmlspecialchars($aInfosBasket['SalePrice']);?></td>
+                <td class="number"><?= htmlspecialchars($aInfosBasket['Qte']);?></td>
+                <td class="number"><?= $fTotalItem;?></td>
+            </tr>
+        <?php endforeach; ?>
+        </tbody>
+        <tfoot>
+        <tr>
+            <td colspan="3">Total HT</td>
+            <td><?=$fHT?> €</td>
+        </tr>
+        <tr>
+            <td colspan="3">TVA (5.5 %)</td>
+            <td><?=round($fHT*0.055,2)?> €</td>
+        </tr>
+        <tr>
+            <td class="colorful" colspan="3">Total TTC</td>
+            <td class="colorful"><?=round($fHT*1.055,2);?> €</td>
+        </tr>
+        </tfoot>
+
+    </table>
+

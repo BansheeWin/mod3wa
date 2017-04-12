@@ -13,7 +13,7 @@ class BookingsAdminModel
 
         $database = new Database();
 
-        return $database->query('SELECT * FROM Booking');
+        return $database->query('SELECT * FROM Booking ORDER BY BookingDate');
     }
 
 }

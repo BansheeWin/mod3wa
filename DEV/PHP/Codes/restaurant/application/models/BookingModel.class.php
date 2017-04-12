@@ -12,4 +12,12 @@ class BookingModel
         $database->executeSql($sSql,$aValues);
     }
 
+    public function verifyDate($sDate)
+    {
+
+        if ($sDate < date('Y-m-d') ) {
+            throw new DomainException('Vous ne pouvez pas commander dans le passé sans Delorean.');
+        }
+
+    }
 }

@@ -21,4 +21,9 @@ class UsersAdminModel
 
         return $database->queryOne('DELETE FROM User WHERE Id=?',[$id]);
     }
+
+    public function getOneUser($id){
+        $database = new Database();
+        return $database->queryOne('SELECT FirstName, LastName, Address, City,ZipCode FROM User WHERE Id=?',[$id]);
+    }
 }
