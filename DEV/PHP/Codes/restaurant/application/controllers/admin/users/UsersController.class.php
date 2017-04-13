@@ -13,7 +13,9 @@ class UsersController
             echo 'Tu peux pas supprimer ton compte';
         }
         return [
-            'users' => $usersAdminModel->listAll()
+            'users' => $usersAdminModel->listAll(),
+            'isConnected' =>$userSession->isAuthenticated(),
+            'userIdentity' =>$userSession->getFullName()
         ];
 
     }

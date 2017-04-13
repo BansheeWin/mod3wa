@@ -4,7 +4,7 @@ class BasketController
     public function httpGetMethod(Http $http, array $queryFields)
     {
         $oBasket = new BasketSession();
-
+    $oUserSession = new UserSession();
         // On crée une instance de MealModel
         $oMealModel = new MealModel();
 
@@ -49,10 +49,15 @@ class BasketController
             // On envoi nos donnees (les infos des menus) à la vue
             return [
                 'basket' 		=> $aDataBasket,
-                '_raw_template'	=> true
+                '_raw_template'	=> true,
+                'isConnected' =>$oUserSession->isAuthenticated(),
+                'userIdentity' =>$oUserSession->getFullName()
             ];
         } else {
-            return ['basket' => $aDataBasket];
+            return ['basket' => $aDataBasket,
+                'isConnected' =>$oUserSession->isAuthenticated(),
+                'userIdentity' =>$oUserSession->getFullName()
+            ];
         }
 
     }

@@ -39,7 +39,6 @@ class OrderModel
 
         foreach ($aDataBasket as $aLine) {
             $aLine = array_merge([':Order_Id' => $iIdCde], $aLine);
-            var_dump($aLine);
             $this->addOrderLine($aLine);
         }
     }

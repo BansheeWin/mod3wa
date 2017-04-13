@@ -27,7 +27,9 @@ class OrderController
         }
         return [
             'basket' => $basket,
-            'user' => $userInfos
+            'user' => $userInfos,
+            'isConnected' =>$oUserSession->isAuthenticated(),
+            'userIdentity' =>$oUserSession->getFullName()
         ];
     }
 

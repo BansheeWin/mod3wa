@@ -1,23 +1,51 @@
 'use strict';
-$(function() {
+function runFormValidation() {
+    var $form;
+    var formValidator;
 
-    $('#add_panier').on('click',function() {
+
+    // [data-no-validation=true]
+    $form = $('form:not([data-no-validation=true])'); // document.querySelector('form')
+
+    // Y a t'il un formulaire à valider sur la page actuelle ?
+    if ($form.length >= 1) {
+        formValidator = new FormValidator($form);
+        formValidator.checkMinLength();
+        var html='';
+        for (let i in formValidator.totalErrors) {
+            html+='<em>' + formValidator.totalErrors[i].message +
+            ' sur le champ : ' + formValidator.totalErrors[i].nomDuChamp + '</em>'
+
+        }
+        formValidator.$errorMessage.html(html);
+    }
+}
+
+$(function () {
+
+    $('#inscription').on('click', function (event) {
+        runFormValidation();
+        event.preventDefault();
+    });
+
+    $('#add_panier').on('click', function () {
         var quantite = $('select[name="qte"] option:selected').val();
         var idMenu = $('select[name="menu"] option:selected').val();
 
         //
-        $.get(getRequestUrl()+'/basket', {ajaxMode : true, idMeal : idMenu, qte : quantite}, function(retourHtml) {
+        $.get(getRequestUrl() + '/basket', {ajaxMode: true, idMeal: idMenu, qte: quantite}, function (retourHtml) {
             $('#my_basket').html(retourHtml);
         });
     });
-    $(document).on('click','.fa-trash',function(){
+    $(document).on('click', '.fa-trash', function () {
 
         $.get(
-            getRequestUrl()+'/basket',
-            {	ajaxMode : true,
-                delete : $(this).parents('tr').data('id')
+            getRequestUrl() + '/basket',
+            {
+                ajaxMode: true,
+                delete: $(this).parents('tr').data('id')
             },
-            function(retourHtml) {
+            function (retourHtml) {
                 $('#my_basket').html(retourHtml);
             }
         );
@@ -62,7 +90,7 @@ $(function() {
         $('#my_basket').html(retourHtml);
     });
 
-    $('#validation').on('click',function(){
+    $('#validation').on('click', function () {
         console.log('hey');
     });
 });

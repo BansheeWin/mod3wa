@@ -34,7 +34,20 @@
 <!-- Interface utilisateur -->
 <nav class="user-interface">
     <ul class="link-list">
-        <!-- Code HTML/PHP à écrire -->
+        <?php if(isset($isConnected)&&$isConnected==true):?>
+            <?=$userIdentity.'</br></br>'?>
+            <a href="<?=$requestUrl;?>/admin/users" class="button button-primary">Liste des utilisateurs</a>
+            <a href="<?=$requestUrl;?>/admin/meals" class="button button-primary">Liste des menus</a>
+            <a href="<?=$requestUrl;?>/admin/bookings" class="button button-primary">Liste des réservations</a>
+            <a href="<?=$requestUrl;?>/booking" class="button button-primary">Réservation</a>
+            <a href="<?=$requestUrl;?>/meal" class="button button-primary">Commande</a>
+            <a href="<?=$requestUrl;?>/basket" class="button button-primary">Mon Panier</a>
+            <a href="<?=$requestUrl;?>/user/logout" class="button button-cancel">Déconnexion</a>
+
+        <?php else:?>
+            <a href="<?=$requestUrl;?>/user" class="button button-primary">Inscription</a>
+            <a href="<?=$requestUrl;?>/user/login" class="button button-primary">Connexion</a>
+        <?php endif;?>
     </ul>
 </nav>
 
@@ -55,6 +68,6 @@
 
 <!-- Code principal JavaScript de l'application -->
 <script src="<?= $wwwUrl ?>/js/main.js"></script>
-
+<script src="<?= $wwwUrl ?>/js/classes/FormValidator.class.js"></script>
 </body>
 </html>

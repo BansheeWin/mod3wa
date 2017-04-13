@@ -10,10 +10,16 @@ class MealsController
 {
     public function httpGetMethod(Http $http, array $queryFields)
     {
+        $userSession = new UserSession();
+
         $mealsAdminModel = new MealsAdminModel();
 
         return [
-            'meals' => $mealsAdminModel->listAll()];
+            'meals' => $mealsAdminModel->listAll(),
+            'isConnected' =>$userSession->isAuthenticated(),
+            'userIdentity' =>$userSession->getFullName()
+        ];
+
     }
 
     public function httpPostMethod(Http $http, array $formFields)

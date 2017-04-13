@@ -10,7 +10,11 @@ class BookingController
 {
     public function httpGetMethod(Http $http, array $queryFields)
     {
-
+        $userSession=new UserSession();
+        return[
+            'isConnected' =>$userSession->isAuthenticated(),
+            'userIdentity' =>$userSession->getFullName()
+        ];
     }
 
     public function httpPostMethod(Http $http, array $formFields)
@@ -23,7 +27,9 @@ class BookingController
                 ':bookingDate' => $formFields['bookingDate'],
                 ':bookingTime' => $formFields['bookingTime'],
                 ':bookingSeats' => $formFields['bookingSeats'],
-                ':userId' => $userSession->getUserId()
+                ':userId' => $userSession->getUserId(),
+                'isConnected' =>$userSession->isAuthenticated(),
+                'userIdentity' =>$userSession->getFullName()
             );
             try {
                 $bookingModel->createBooking($insert);
