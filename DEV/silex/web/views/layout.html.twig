@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{% block title %}Silex{% endblock %}</title>
+
+    {% block stylesheets %}
+        {# On charge le CSS de bootstrap depuis le site directement #}
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    {% endblock %}
+</head>
+
+
+<body>
+<div class="container">
+    <div id="header" class="jumbotron">
+        <h1>Silex</h1>
+        <p>
+            Ce projet est propulsé par Silex,
+            et construit grâce a Cyril.
+        </p>
+
+    </div>
+
+    <div class="row">
+        <div id="menu" class="col-md-3">
+            <h3>Les Tests</h3>
+            <ul class="nav nav-pills nav-stacked">
+                <li><a href="">Test</a></li>
+                <li><a href="">Test1</a></li>
+            </ul>
+
+
+        </div>
+        <div id="content" class="col-md-9">
+            {% block body %}
+            {% endblock %}
+        </div>
+    </div>
+    {% block divTest %}
+        <div>Ceci est un test</div>
+    {% endblock %}
+    <hr>
+
+    <footer>
+        <p>The sky's the limit © {{ 'now'|date('Y') }} and beyond.</p>
+    </footer>
+</div>
+
+{% block javascripts %}
+    {# Ajoutez ces lignes JavaScript si vous comptez vous servir des fonctionnalités du bootstrap Twitter #}
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+{% endblock %}
+
+</body>
+</html>
