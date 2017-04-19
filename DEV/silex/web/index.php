@@ -1,6 +1,6 @@
 <?php
 
-
+define('ROOT_DIR',__DIR__);
 // Chargement du fichier d'autoload généré par Composer.
 include __DIR__.'/../vendor/autoload.php';
 
@@ -12,17 +12,14 @@ use Silex\Application;
 $app = new Application();
 
 $app->get('/hello/{firstName}/{age}', 'MyProject\Controller\BonjourController::sayHello')
-    ->assert('age', '\d{2}')
-    ->bind('user')
+    ->assert('age', '\d+')
     ->value('firstName','Garry')
     ->value('age','20');
 
 $app->register(new Silex\Provider\TwigServiceProvider(), array(
     'twig.path' => __DIR__.'/views'));
 
-$app->get('/', function() use ($app) {
-	return $app['twig']->render('homePage.html.twig');
-});
-
+$app->get('/', 'MyProject\Controller\HomeController::httpGetMethod');
+$app->post('/', 'MyProject\Controller\HomeController::httpPostMethod');
 $app['debug'] = true;
 $app->run();
