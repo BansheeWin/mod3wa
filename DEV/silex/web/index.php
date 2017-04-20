@@ -18,8 +18,9 @@ $app->get('/hello/{firstName}/{age}', 'MyProject\Controller\BonjourController::s
 
 $app->register(new Silex\Provider\TwigServiceProvider(), array(
     'twig.path' => __DIR__.'/views'));
-
-$app->get('/', 'MyProject\Controller\HomeController::httpGetMethod');
-$app->post('/', 'MyProject\Controller\HomeController::httpPostMethod');
+$app->get('/','MyProject\Controller\HomeController::homeRun');
+$app->get('/flickr', 'MyProject\Controller\FlickrController::searchFlickr');
+$app->get('/form', 'MyProject\Controller\PhotoController::httpGetMethod');
+$app->post('/form', 'MyProject\Controller\PhotoController::httpPostMethod');
 $app['debug'] = true;
 $app->run();
